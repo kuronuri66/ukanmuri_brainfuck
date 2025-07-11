@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<title>ukanmuri brainf*ck</title>
+
+<link rel="icon" href="favicon.ico">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reddit+Mono&display=swap" rel="stylesheet">
+
+<body bgcolor="#1b1c1d">
+    <nav id="header-bg">
+        <div id="header">
+            <img id="icon_img" src="icon.webp" alt="icon" />
+            <p class="header">ukanmuri brainf*ck</p>
+            <button id="GuiedBtn" class="header_button"><img src="img/Guide.svg">Guide</button>
+            <button id="golfBtn" class="header_button"><img src="img/golf.svg">golf</button>
+            <button id="infoBtn" class="header_button"><img src="img/info.svg">info</button>
+            <button id="settingBtn" class="header_button"><img src="img/settings.svg">setting</button>
+        </div>
+    </nav>
+
+    <div id="workspace">
+        <div id="leftspace">
+            <div id="memory_div">
+                <div class="nav">
+                    <img src="img/memory.svg" class="title_img">
+                    <p>memory</p>
+                </div>
+                <pre id="memory"></pre>
+            </div>
+
+            <div id="code_div">
+                <div id="code_nav">
+                    <div class="nav">
+                        <img src="img/code.svg">
+                        <p>code</p>
+                    </div>
+                    <label id="save_button"  class="button" onclick="save()">
+                        <img src="img/download.svg">
+                    </label>
+                    <label class="button" id="load_button">
+                        <input id="load-file" type="file" accept=".txt" style="display:none;" onchange="load()"/>
+                        <img src="img/upload.svg">
+                    </label>
+                    <label id="copy_button" class="button">
+                        <img src="img/copy.svg">
+                    </label>
+                    <label id="bomb_button" class="button" onclick="myconfirm();confirm_target = 'bomb'">
+                        <img src="img/bomb.svg">
+                    </label>
+                    <label id="codei_btn" class="button">
+                        <img src="img/info.svg">
+                    </label>
+                </div>
+                <textarea id="code" onchange="code_change()"></textarea>
+            </div>
+        </div>
+        <div id="space"></div>
+        <div id="rightspace">
+            <div id="console_div">
+                <div class="nav">
+                    <img src="img/terminal.svg">
+                    <p>console</p>
+                </div>
+                
+                <pre id="preview"></pre>
+                <pre id="console"></pre>
+            </div>
+            <div id="input_div">
+                <div class="nav">
+                    <img src="img/input.svg">
+                    <p>input</p>
+                </div>
+                <textarea id="input"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <nav id="footer-bg">
+        <div id="footer">
+            <button id="play" class="button" onclick="play()">
+                <img src="img/play.svg">
+            </button>
+            <button id="pause" class="button" onclick="pause()" style="font-size: 3vh; display: none;">
+                <img src="img/pause.svg">
+            </button>
+            <button class="button" onclick="stop()" style="font-size: 3vh;">
+                <img src="img/stop.svg">
+            </button>
+            <div id="speed">
+                <img src="img/speed.svg" for="speed_input">
+                <label for="speed_input">speed:</label>
+                <input list="speed_list" id="speed_input" name="speed_input" value="30"/>
+                <datalist id="speed_list">
+                    <option value="0"></option>
+                    <option value="10"></option>
+                    <option value="30"></option>
+                    <option value="50"></option>
+                    <option value="100"></option>
+                    <option value="500"></option>
+                </datalist>
+                <label for="speed_input">ms</label>
+            </div>
+        </div>
+    </nav>
+
+    <div id="myPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="popup-close-btn">&times;</span>
+            <div id="Guidecontent" class="contents">
+                <div class="Popup_title">
+                    <img src="img/code.svg">
+                    <h2>Commands</h2>
+                </div>
+                <div>
+                    <table id="CommandsTable-ja">
+                        <thead>
+                            <tr>
+                                <th>command</th>
+                                <th>Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>></td><td>データポインタをインクリメントする。</td></tr>
+                            <tr><td><</td><td>データポインタをデクリメントする。</td></tr>
+                            <tr><td>+</td><td>データポインタが指すバイトの値をインクリメントする。</td></tr>
+                            <tr><td>-</td><td>データポインタが指すバイトの値をデクリメントする。</td></tr> 
+                            <tr><td>.</td><td>データポインタが指すバイトの値をASCII文字として出力する。</td></tr>
+                            <tr><td>,</td><td>1バイトの入力を受け取り、データポインタが指す場所に格納する。</td></tr>
+                            <tr><td>[</td><td>データポインタが指すバイトの値が0の場合、命令ポインタを対応する ] の直後までジャンプさせる。</td></tr>
+                            <tr><td>]</td><td>データポインタが指すバイトの値が0でない場合、命令ポインタを対応する [ の直後までジャンプさせる。</td></tr>
+
+                        </tbody>
+                    </table>
+                    <table id="CommandsTable-en">
+                        <thead>
+                            <tr>
+                                <th>command</th>
+                                <th>Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>></td><td>Increment the data pointer.</td></tr>
+                            <tr><td><</td><td>Decrement the data pointer.</td></tr>
+                            <tr><td>+</td><td>Increment the byte at the data pointer.</td></tr>
+                            <tr><td>-</td><td>Decrement the byte at the data pointer.</td></tr> 
+                            <tr><td>.</td><td>Output the byte at the data pointer.</td></tr>
+                            <tr><td>,</td><td>Accept one byte of input, storing it at the data pointer.</td></tr>
+                            <tr><td>[</td><td>If the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command.</td></tr>
+                            <tr><td>]</td><td>If the byte at the data pointer is non-zero, then instead of moving the instruction pointer forward to the next command, jump it back to the command after the matching [ command.</td></tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="Popup_title">
+                    <img src="img/abc.svg">
+                    <h2>ASCII</h2>
+                </div>
+                <div id="table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>10進数 decimal number</th>
+                                <th>16進数 Hexadecimal</th>
+                                <th>文字 letter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>10</td><td>0x0a</td><td>改行</td></tr>
+                            <tr><td>32</td><td>0x20</td><td>空白文字</td></tr>
+                            <tr><td>33</td><td>0x21</td><td>!</td></tr>
+                            <tr><td>34</td><td>0x22</td><td>"</td></tr>
+                            <tr><td>35</td><td>0x23</td><td>#</td></tr>
+                            <tr><td>36</td><td>0x24</td><td>$</td></tr>
+                            <tr><td>37</td><td>0x25</td><td>%</td></tr>
+                            <tr><td>38</td><td>0x26</td><td>&</td></tr>
+                            <tr><td>39</td><td>0x27</td><td>'</td></tr>
+                            <tr><td>40</td><td>0x28</td><td>(</td></tr>
+                            <tr><td>41</td><td>0x29</td><td>)</td></tr>
+                            <tr><td>42</td><td>0x2a</td><td>*</td></tr>
+                            <tr><td>43</td><td>0x2b</td><td>+</td></tr>
+                            <tr><td>44</td><td>0x2c</td><td>,</td></tr>
+                            <tr><td>45</td><td>0x2d</td><td>-</td></tr>
+                            <tr><td>46</td><td>0x2e</td><td>.</td></tr>
+                            <tr><td>47</td><td>0x2f</td><td>/</td></tr>
+                            <tr><td>48</td><td>0x30</td><td>0</td></tr>
+                            <tr><td>49</td><td>0x31</td><td>1</td></tr>
+                            <tr><td>50</td><td>0x32</td><td>2</td></tr>
+                            <tr><td>51</td><td>0x33</td><td>3</td></tr>
+                            <tr><td>52</td><td>0x34</td><td>4</td></tr>
+                            <tr><td>53</td><td>0x35</td><td>5</td></tr>
+                            <tr><td>54</td><td>0x36</td><td>6</td></tr>
+                            <tr><td>55</td><td>0x37</td><td>7</td></tr>
+                            <tr><td>56</td><td>0x38</td><td>8</td></tr>
+                            <tr><td>57</td><td>0x39</td><td>9</td></tr>
+                            <tr><td>58</td><td>0x3a</td><td>:</td></tr>
+                            <tr><td>59</td><td>0x3b</td><td>;</td></tr>
+                            <tr><td>60</td><td>0x3c</td><td>&lt;</td></tr>
+                            <tr><td>61</td><td>0x3d</td><td>=</td></tr>
+                            <tr><td>62</td><td>0x3e</td><td>&gt;</td></tr>
+                            <tr><td>63</td><td>0x3f</td><td>?</td></tr>
+                            <tr><td>64</td><td>0x40</td><td>@</td></tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <tbody>
+                            <tr><td>65</td><td>0x41</td><td>A</td></tr>
+                            <tr><td>66</td><td>0x42</td><td>B</td></tr>
+                            <tr><td>67</td><td>0x43</td><td>C</td></tr>
+                            <tr><td>68</td><td>0x44</td><td>D</td></tr>
+                            <tr><td>69</td><td>0x45</td><td>E</td></tr>
+                            <tr><td>70</td><td>0x46</td><td>F</td></tr>
+                            <tr><td>71</td><td>0x47</td><td>G</td></tr>
+                            <tr><td>72</td><td>0x48</td><td>H</td></tr>
+                            <tr><td>73</td><td>0x49</td><td>I</td></tr>
+                            <tr><td>74</td><td>0x4a</td><td>J</td></tr>
+                            <tr><td>75</td><td>0x4b</td><td>K</td></tr>
+                            <tr><td>76</td><td>0x4c</td><td>L</td></tr>
+                            <tr><td>77</td><td>0x4d</td><td>M</td></tr>
+                            <tr><td>78</td><td>0x4e</td><td>N</td></tr>
+                            <tr><td>79</td><td>0x4f</td><td>O</td></tr>
+                            <tr><td>80</td><td>0x50</td><td>P</td></tr>
+                            <tr><td>81</td><td>0x51</td><td>Q</td></tr>
+                            <tr><td>82</td><td>0x52</td><td>R</td></tr>
+                            <tr><td>83</td><td>0x53</td><td>S</td></tr>
+                            <tr><td>84</td><td>0x54</td><td>T</td></tr>
+                            <tr><td>85</td><td>0x55</td><td>U</td></tr>
+                            <tr><td>86</td><td>0x56</td><td>V</td></tr>
+                            <tr><td>87</td><td>0x57</td><td>W</td></tr>
+                            <tr><td>88</td><td>0x58</td><td>X</td></tr>
+                            <tr><td>89</td><td>0x59</td><td>Y</td></tr>
+                            <tr><td>90</td><td>0x5a</td><td>Z</td></tr>
+                            <tr><td>91</td><td>0x5b</td><td>[</td></tr>
+                            <tr><td>92</td><td>0x5c</td><td>\</td></tr>
+                            <tr><td>93</td><td>0x5d</td><td>]</td></tr>
+                            <tr><td>94</td><td>0x5e</td><td>^</td></tr>
+                            <tr><td>95</td><td>0x5f</td><td>_</td></tr>
+                            <tr><td>96</td><td>0x60</td><td>`</td></tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <tbody>
+                            <tr><td>97</td><td>0x61</td><td>a</td></tr>
+                            <tr><td>98</td><td>0x62</td><td>b</td></tr>
+                            <tr><td>99</td><td>0x63</td><td>c</td></tr>
+                            <tr><td>100</td><td>0x64</td><td>d</td></tr>
+                            <tr><td>101</td><td>0x65</td><td>e</td></tr>
+                            <tr><td>102</td><td>0x66</td><td>f</td></tr>
+                            <tr><td>103</td><td>0x67</td><td>g</td></tr>
+                            <tr><td>104</td><td>0x68</td><td>h</td></tr>
+                            <tr><td>105</td><td>0x69</td><td>i</td></tr>
+                            <tr><td>106</td><td>0x6a</td><td>j</td></tr>
+                            <tr><td>107</td><td>0x6b</td><td>k</td></tr>
+                            <tr><td>108</td><td>0x6c</td><td>l</td></tr>
+                            <tr><td>109</td><td>0x6d</td><td>m</td></tr>
+                            <tr><td>110</td><td>0x6e</td><td>n</td></tr>
+                            <tr><td>111</td><td>0x6f</td><td>o</td></tr>
+                            <tr><td>112</td><td>0x70</td><td>p</td></tr>
+                            <tr><td>113</td><td>0x71</td><td>q</td></tr>
+                            <tr><td>114</td><td>0x72</td><td>r</td></tr>
+                            <tr><td>115</td><td>0x73</td><td>s</td></tr>
+                            <tr><td>116</td><td>0x74</td><td>t</td></tr>
+                            <tr><td>117</td><td>0x75</td><td>u</td></tr>
+                            <tr><td>118</td><td>0x76</td><td>v</td></tr>
+                            <tr><td>119</td><td>0x77</td><td>w</td></tr>
+                            <tr><td>120</td><td>0x78</td><td>x</td></tr>
+                            <tr><td>121</td><td>0x79</td><td>y</td></tr>
+                            <tr><td>122</td><td>0x7a</td><td>z</td></tr>
+                            <tr><td>123</td><td>0x7b</td><td>{</td></tr>
+                            <tr><td>124</td><td>0x7c</td><td>|</td></tr>
+                            <tr><td>125</td><td>0x7d</td><td>}</td></tr>
+                            <tr><td>126</td><td>0x7e</td><td>~</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="golfcontent" class="contents">
+                <div class="Popup_title">
+                    <img src="img/golf.svg">
+                    <h2>golf</h2>
+                </div>
+                <label>いろんな問題に挑戦できるようにしました 本気で挑戦する人はこちらがおすすめ
+                    <a href="http://golf.shinh.org">Anarchy Golf</a>
+                </label>
+                
+                <div class="Popup_title">
+                    <img src="img/question.svg">
+                    <h2>Question</h2>
+                </div>
+                
+                <div id="golf_Questions">
+
+                </div>
+            </div>
+
+            <div id="infocontent" class="contents">
+                <div class="Popup_title">
+                    <img src="img/info.svg">
+                    <h2>Info</h2>
+                </div>
+                <h2>explanation</h2>
+                <label>ukanmuri brainfuckはbraunfuckを楽しく動かすことをテーマに作られたサイトです。</label>
+                <br>
+                <label>(Ukanmuri Brainfuck is a website created with the theme of making Brainfuck fun to run.)</label>
+                <div class="Popup_title">
+                    <img src="img/bug.svg">
+                    <h2>バグ報告・新機能提案など (Bug Report / Feature Suggestion, etc.)</h2>
+                </div>
+
+            </div>
+
+            <div id="settingcontent" class="contents">
+                <div class="Popup_title">
+                    <img src="img/settings.svg">
+                    <h2>setting</h2>
+                </div>
+                <div class="set-kind">
+                    <div class="Popup_title">
+                        <img src="img/memory.svg">
+                        <h2>memory</h2>
+                    </div>
+                    <div class="set_element">
+                        <label>memoryのcell size: <input type="number" id="cell_size" class="setting-input" value="8"/> bit</label>
+                    </div>
+                    <div class="set_element">
+                        <label>memoryの数: <input type="number" id="memory_size" class="setting-input" value="1024"/> 個</label>
+                    </div>
+                </div>
+                <div class="set-kind">
+                    <div class="Popup_title">
+                        <h2>strage</h2>
+                    </div>
+                    <div class="set_element">
+                        <label>
+                            <input type="checkbox" id="storage_box" class="setting-input" value="8" checked/>
+                            local storage 
+                        </label>
+                        
+                    </div>
+                    <div class="set_element">
+                        <button>local storage削除</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="code_infocontent" class="contents">
+                <div class="Popup_title">
+                    <img src="img/info.svg">
+                    <h2>Code Info</h2>
+                </div>
+                <label>count: <label id="count"></label></label>
+            </div>
+
+            <div id="confirm_content" class="contents">
+                <div class="Popup_title">
+                    <img src="img/check.svg">
+                    <h2>Confirm</h2>
+                </div>
+                <p>よろしいですか</p>
+                <button id="confirm_button">OK!</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>

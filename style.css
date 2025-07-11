@@ -1,0 +1,495 @@
+.source-code-pro-SourceCode {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+:focus {
+  outline: none;
+}
+
+h1 {
+    font-size: 4vmin;
+}
+
+label {
+    font-size: 3vmin;
+}
+
+.reddit-mono-RedditMono {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    color: whitesmoke;
+    padding:0;
+    margin:0;
+    align-items: center;
+}
+
+img {
+    margin: 0 0;
+    width: 4vh;
+}
+
+textarea {
+    width: 42.5vw;;
+    background-color: #191a19;
+    color: whitesmoke;
+    border: none;
+    resize: none;
+    font-size: 3vh;
+    flex-grow: 1;
+    font-family: Reddit Mono;
+    tab-size: 4;
+    word-break: break-all;
+    white-space: pre-wrap;
+
+}
+
+button {
+    background-color: #111;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    text-align: center;
+    display: flex; /* Flexコンテナにする */
+    justify-content: center; /* 主軸（横方向）で中央に寄せる */
+    align-items: center; /* 交差軸（縦方向）で中央に寄せる */
+}
+
+input[type="number"] {
+    height: 3vmin;
+    width: 10vmin;
+}
+
+input[type="checkbox"] {
+    margin: 0;
+    width: 3vmin;
+    height: 3vmin;
+}
+
+.button:hover {
+    background-color: #333;
+}
+
+.button:active {
+    background-color: #444;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+button:active {
+    background-color: #444;
+}
+
+p {
+    display: block;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    height: 5vh;
+    font-size: 3vh;
+}
+
+pre {
+    white-space: pre-wrap;
+    flex-grow: 1;
+    overflow: scroll;
+    font-size: 2.5vmin;
+    background-color: #1a1b1a;
+    overflow-x: hidden;  /* 横スクロールバーを非表示 */
+    overflow-y: scroll;
+    padding: 1vh;
+    font-family: Reddit Mono;
+}
+
+.highlight {
+    background-color: rgb(120, 189, 120); /* 蛍光ペンの色 */
+    padding: 0; /* ハイライトの範囲を少し広げる */
+    border-radius: 0; /* 角を少し丸める */
+}
+
+.button {
+    display: flex; /* Flexコンテナにする */
+    justify-content: center; /* 主軸（横方向）で中央に寄せる */
+    align-items: center; /* 交差軸（縦方向）で中央に寄せる */
+    aspect-ratio: 1 / 1; 
+}
+
+.title_img {
+    height: 5vh;
+    margin: auto 0
+}
+
+.nav {
+    display: flex;
+}
+
+
+
+#header-bg {
+    background-color: #050505;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#header {
+    display: flex;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    max-width: 88vw;
+    height:9vh;
+    align-items: end;
+    margin: auto;
+}
+
+#icon_img {
+    width: 9vh;
+}
+
+.header {
+    margin-left: 1vw;
+    font-size: 3.5vh;
+}
+
+#GuiedBtn {
+    margin-left: auto;
+}
+
+.header_button {
+    color: whitesmoke;
+    background-color: #050505;
+    height:9vh;
+    font-size: 2.5vh;
+    border: none;
+    margin: 0vw 0.1vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+.header_button img {
+    margin: 0 0;
+    width: 6vh;
+}
+
+
+#workspace {
+    margin: 0 auto;
+    margin-top: 10vh;
+    width: 88vw;
+    display: flex;
+}
+
+#leftspace {
+    width: 42.5vw;
+}
+
+#space {
+    width: 3vw;
+}
+
+#rightspace {
+    width: 42.5vw;
+}
+
+#code_nav label {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    height: 5vh;
+    font-size: 3vh;
+}
+
+#memory_div {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#code_div {
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#save_button {
+    margin: 1vh 0.5vh 1vh auto;
+}
+
+#load_button {
+    margin: 1vh 0.5vh;
+}
+
+#copy_button {
+    margin: 1vh;
+}
+
+
+#console_div {
+    height:65vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#console {
+    height:40vh;
+    line-height: 1.5;
+}
+
+#input_div {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#code_nav .button {
+    border-radius: 50%;
+}
+
+
+#footer-bg {
+    background-color: #151515;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#footer {
+    display: flex;
+    bottom: 0px;
+    left: 0px;
+    z-index: 9999;
+    max-width: 88vw;
+    height:8vh;
+    align-items: end;
+    margin: auto;
+}
+
+#footer button {
+    height: 6vh;
+    width: 6vh;
+    margin: 1vh;
+}
+
+#speed {
+    margin: auto 0 auto auto;
+    display: flex; /* Flexコンテナにする */
+    justify-content: center; /* 主軸（横方向）で中央に寄せる */
+    align-items: center; /* 交差軸（縦方向）で中央に寄せる */
+}
+
+#speed_input {
+    margin: auto 1vh;
+    background-color: #111;
+    color: white;
+    border: none;
+    height: 4vh;
+}
+
+.footer-button {
+    width:7vh;
+    height: 7vh;
+}
+
+#memory span {
+    margin-right: 1vw;
+    display: inline-block;
+}
+
+
+.popup-overlay {
+    display: none; /* JavaScriptで'flex'に変更して表示 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒い背景 */
+    justify-content: center; /* 中央寄せ */
+    align-items: center; /* 中央寄せ */
+    z-index: 1000; /* 最前面に表示 */
+}
+
+/* ポップアップのコンテンツボックス */
+.popup-content {
+    padding: 2vh;
+    border-radius: 1vh;
+
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    background-color: #1a1b1a;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 閉じるボタン */
+.popup-close-btn {
+    position: absolute;
+    top: 1vmin;
+    right: 3vmin;
+    font-size: 6vmin;
+    cursor: pointer;
+    color: #888;
+}
+
+#Guidecontent {
+    display: block;
+}
+
+#infocontent {
+    display: block;
+}
+
+
+.popup-close-btn:hover {
+    color: #333;
+}
+
+#CommandsTable {
+    width:50vw;
+}
+
+.Popup_title {
+    display: flex;
+}
+
+
+table {
+    text-align: left;
+}
+
+#table {
+    display: flex;
+}
+
+.table {
+    width: 15vw;
+    text-align: left;
+    margin: 1vh
+}
+
+#code_nav {
+    display: flex;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #171717; /* 薄いグレー */
+}
+
+/* 偶数行の背景色 */
+tbody tr:nth-child(even) {
+  background-color: #131313; /* 白 */
+}
+
+tbody, thead {
+    margin :0.5vh;
+    height :5vh;
+}
+
+thead {
+    background-color: #151515;
+}
+
+#infocontent {
+    text-align: left;
+}
+
+.contents {
+    margin: 2vmin;
+    width: 50vw;
+    height: 70vh;
+    text-align: left;
+}
+
+.Popup_title img {
+    width: 6vmin;
+}
+
+#golf_Questions {
+    text-align: left;
+}
+
+.golf_Question {
+    width: auto;
+    background-color: #171717;
+    padding: 1vh;
+    margin: 1vh 0;
+    display: flex;
+}
+
+.golf_Question img {
+    align-items: end;
+    width: 2vw;
+}
+
+.Question_contents {
+    margin: 0.5vh;
+    display: block;
+    background-color: #141414;
+    padding: 1vh;
+    justify-content: center;
+}
+
+.Question_id {
+    width: 2vw;
+}
+
+.Question_difficulty {
+    width: 10vw;
+}
+
+.Question_question {
+    width: 20vw;
+}
+
+.Question_target {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.setting-input {
+    background-color: #141414;
+    border: none;
+    color: whitesmoke;
+    text-align: right;
+}
+
+.PopUpcontents {
+    text-align: left;
+}
+
+.set_element {
+    margin: 2vmin;
+    margin-left: 4vmin;
+}
+
+.set-kind{
+    margin-left: 3vmin;
+}
+
+#confirm_button {
+    height: 10vmin;
+    width: 30vmin;
+    font-size: 5vmin;
+    margin-left: auto;
+    margin-right: 5vmin
+}
+
+#confirm_content {
+    height: auto;
+    text-align: left;
+}
