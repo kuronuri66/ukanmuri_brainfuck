@@ -93,15 +93,15 @@
             <div id="speed">
                 <img src="img/speed.svg" for="speed_input">
                 <label for="speed_input">speed:</label>
-                <input list="speed_list" id="speed_input" name="speed_input" value="30"/>
-                <datalist id="speed_list">
-                    <option value="0"></option>
-                    <option value="10"></option>
-                    <option value="30"></option>
-                    <option value="50"></option>
-                    <option value="100"></option>
-                    <option value="500"></option>
-                </datalist>
+                <input list="speed_list" id="speed_input" name="speed_input" value="30" type="number"/>
+                <select id="speed_select" onchange="speed_change()">
+                    <option value="0">0</option>
+                    <option value="10">10</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="input">入力</option>
+                </select>
                 <label for="speed_input">ms</label>
             </div>
         </div>

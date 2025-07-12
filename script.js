@@ -9,6 +9,7 @@ let preview = document.querySelector("#preview");
 let input_i;
 let play_ = true;
 const brainfuckletter = ['<', '>', '+', '-', '.', ',', '[' ,"]"];
+let speed = 30;
 
 //const pause = document.getElementById('pause');
 
@@ -147,7 +148,12 @@ function brainfuck(code,input,bit) {
         if (document.getElementById("speed_input").value == "0") {
             brainfuck(code);
         } else {
-            setTimeout(function() { brainfuck(code,input,bit); }, document.getElementById("speed_input").value);
+            if (document.getElementById("speed_select").value == "input"){
+                speed = document.getElementById("speed_input").value
+            } else {
+                speed = Number(document.getElementById("speed_select").value)
+            }
+            setTimeout(function() { brainfuck(code,input,bit); }, speed);
         }
     } else {
         const pause = document.getElementById('pause');
@@ -484,6 +490,7 @@ if(checkbox.checked){
         );
     }
 }
+
 function code_change() {
     if(checkbox.checked) {
         localStorage.setItem('code', document.getElementById("code").value);
@@ -495,3 +502,17 @@ window.addEventListener("load", () =>{
         document.getElementById("code").value = localStorage.getItem('code');
     }
 });
+
+//speed_input
+const speed_select = document.getElementById("speed_select");
+const speed_input = document.getElementById("speed_input");
+speed_change()
+function speed_change() {
+    if (speed_select.value == "input"){
+        speed_select.style.width = "1.5vw";
+        speed_input.style.display = "block";
+    } else {
+        speed_select.style.width = "4vw";
+        speed_input.style.display = "none";
+    }
+}
