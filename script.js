@@ -512,7 +512,7 @@ function speed_change() {
         speed_select.style.width = "1.5vw";
         speed_input.style.display = "block";
     } else {
-        speed_select.style.width = "4vw";
+        speed_select.style.width = "10vw";
         speed_input.style.display = "none";
     }
 }
