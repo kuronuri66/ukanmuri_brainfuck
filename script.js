@@ -144,15 +144,15 @@ function brainfuck(code,input,bit) {
     }
 
     display();
+    if (document.getElementById("speed_select").value == "input"){
+        speed = document.getElementById("speed_input").value
+    } else {
+        speed = Number(document.getElementById("speed_select").value)
+    }
     if (code.length > i){
-        if (document.getElementById("speed_input").value == "0") {
+        if (speed == "0") {
             brainfuck(code);
-        } else {
-            if (document.getElementById("speed_select").value == "input"){
-                speed = document.getElementById("speed_input").value
-            } else {
-                speed = Number(document.getElementById("speed_select").value)
-            }
+        } else { 
             setTimeout(function() { brainfuck(code,input,bit); }, speed);
         }
     } else {

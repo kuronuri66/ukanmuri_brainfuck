@@ -7,6 +7,158 @@ h1 {
     font-family: sans-serif;
 }
 
+h2 {
+    font-family: sans-serif;
+}
+
+label {
+    font-size: 3vmin;
+    font-family: sans-serif;
+}
+
+.reddit-mono-RedditMono {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+:focus {
+  outline: none;
+}
+
+
+:focus {
+  outline: none;
+}
+
+h1 {
+    font-size: 4vmin;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+label {
+    font-size: 3vmin;
+    font-family: sans-serif;
+}
+
+.reddit-mono-RedditMono {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:focus {
+  outline: none;
+}
+
+h1 {
+    font-size: 4vmin;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+label {
+    font-size: 3vmin;
+    font-family: sans-serif;
+}
+
+.reddit-mono-RedditMono {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:focus {
+  outline: none;
+}
+
+h1 {
+    font-size: 4vmin;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+label {
+    font-size: 3vmin;
+    font-family: sans-serif;
+}
+
+.reddit-mono-RedditMono {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:focus {
+  outline: none;
+}
+
+h1 {
+    font-size: 4vmin;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+label {
+    font-size: 3vmin;
+    font-family: sans-serif;
+}
+
+.reddit-mono-RedditMono {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+    font-size: 4vmin;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+label {
+    font-size: 3vmin;
+    font-family: sans-serif;
+}
+
+.reddit-mono-RedditMono {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+:focus {
+  outline: none;
+}
+
+h1 {
+    font-size: 4vmin;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
 label {
     font-size: 3vmin;
     font-family: sans-serif;
@@ -90,7 +242,7 @@ p {
     margin-top: 1vh;
     margin-bottom: 1vh;
     height: 5vh;
-    font-size: 3vmin;
+    font-size: 3vh;
     font-family: sans-serif;
 }
 
@@ -502,4 +654,48 @@ thead {
 #confirm_content {
     height: auto;
     text-align: left;
+}
+
+@media (max-width: 480px) { 
+    #workspace {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #leftspace {
+        width: 90vw;
+        height: 40vh;
+    }
+
+    #rightspace {
+        width: 90vw;
+        height: 40vh;
+    }
+
+    textarea {
+        width: 90vw;
+    }
+
+    #space {
+        display: none;
+    }
+
+    #memory_div {
+        height: 15vh;
+    }
+    #code_div {
+        height: 25vh;
+    }
+
+    #console_div {
+        height:30vh;
+    }
+
+    #input_div {
+        height: 10vh;
+    }
+
+    .contents {
+        width: 80vw;
+    }
 }
