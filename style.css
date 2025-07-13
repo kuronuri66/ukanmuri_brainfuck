@@ -657,6 +657,9 @@ thead {
 }
 
 @media (max-width: 480px) { 
+    p{
+        margin:auto 0;
+    }
 
     #header {
         height: 9dvh
@@ -670,6 +673,7 @@ thead {
         flex-direction: column;
         height :80dvh;
         padding-bottom: 8vh;
+        margin-top: 9dvh;
     }
 
     #leftspace {
@@ -703,7 +707,7 @@ thead {
 
     #code_div {
         height: 25dvh;
-    }
+        }
 
     #console_div {
         height:30dvh;
@@ -731,8 +735,6 @@ thead {
         height:9dvh;
         font-size: 2dvh;
     }
-
-    
 
     .contents {
         width: 80vw;
