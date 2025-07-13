@@ -347,11 +347,12 @@ GuiedBtn.addEventListener('click', () => {
         document.getElementById("CommandsTable-en").style.display = 'block';
     }
 });
-
+/*/
 golfBtn.addEventListener('click', () => {
     myPopup.style.display = 'flex'; // 'flex'で中央寄せを適用
     choosepopup("golf");
 });
+/*/
 
 infoBtn.addEventListener('click', () => {
     myPopup.style.display = 'flex'; // 'flex'で中央寄せを適用
@@ -516,3 +517,110 @@ function speed_change() {
         speed_input.style.display = "none";
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const keyboard = document.getElementById('keyboard');
+    let isDragging = false;
+    let offsetX, offsetY; // 要素内のクリックされた位置と要素の左上からの差
+
+    // ドラッグ開始
+    keyboard.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        keyboard.classList.add('dragging');
+
+        // クリックした位置と要素の左上からの差を計算
+        offsetX = e.clientX - keyboard.getBoundingClientRect().left;
+        offsetY = e.clientY - keyboard.getBoundingClientRect().top;
+    });
+
+    // ドラッグ中
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        // 新しい位置を計算
+        const newLeft = e.clientX - offsetX;
+        const newTop = e.clientY - offsetY;
+
+        // 要素の位置を更新
+        keyboard.style.left = `${newLeft}px`;
+        keyboard.style.top = `${newTop}px`;
+    });
+
+    // ドラッグ終了
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            keyboard.classList.remove('dragging');
+        }
+    });
+
+    // **タッチデバイス対応**
+    keyboard.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        keyboard.classList.add('dragging');
+
+        const touch = e.touches[0]; // 最初の指の情報を取得
+        offsetX = touch.clientX - keyboard.getBoundingClientRect().left;
+        offsetY = touch.clientY - keyboard.getBoundingClientRect().top; // スクロールなど、デフォルトのタッチイベントを無効化
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+
+        const touch = e.touches[0];
+        const newLeft = touch.clientX - offsetX;
+        const newTop = touch.clientY - offsetY;
+
+        keyboard.style.left = `${newLeft}px`;
+        keyboard.style.top = `${newTop}px`;
+        e.preventDefault(); // スクロールなど、デフォルトのタッチイベントを無効化
+    }, { passive: false });
+
+    document.addEventListener('touchend', () => {
+        if (isDragging) {
+            isDragging = false;
+            keyboard.classList.remove('dragging');
+        }
+    });
+});
+
+function keyboard_push(word){
+    const code = document.getElementById("code");
+    const sentence = code.value;
+    const len = sentence.length;
+    const pos = code.selectionStart;
+    if(brainfuckletter.includes(word)){
+        const before = sentence.substr(0, pos);
+        const after = sentence.substr(pos, len);
+
+        code.value = before + word + after;
+
+        code.focus();
+        code.setSelectionRange(pos+1, pos+1)
+    } else{
+        if(word=="←"){
+            code.focus();
+            code.setSelectionRange(pos-1, pos-1)
+        }else if(word=="→"){
+            code.focus();
+            code.setSelectionRange(pos+1, pos+1)
+        }else if(word=="bs"){
+            const before = sentence.substr(0, pos-1);
+            const after = sentence.substr(pos, len);
+
+            code.value = before + after;
+
+            code.focus();
+            code.setSelectionRange(pos-1, pos-1)
+        }
+    }
+
+}
+
+function close_keyboard() {
+    document.getElementById("keyboard").style.display.none;
+}
+const keyBtn = document.getElementById("keyboardBtn")
+keyBtn.addEventListener('click', () => {
+    document.getElementById('keyboard').style.display='block';
+});

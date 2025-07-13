@@ -319,7 +319,7 @@ select {
     font-size: 3.5vmin;
 }
 
-#GuiedBtn {
+#infoBtn {
     margin-left: auto;
 }
 
@@ -654,6 +654,39 @@ thead {
 #confirm_content {
     height: auto;
     text-align: left;
+}
+
+#keyboard {
+    background-color: #151515;
+    width: auto;
+    height: auto;
+    top: 50px; /* 初期位置 */
+    left: 50px;
+    position: absolute;
+    opacity: 0.99;
+}
+
+#keyboard-top {
+    margin-top: 4vh;
+}
+
+
+.keyboard-button button{
+    width: 6vmin;
+    height: 6vmin;
+    margin: 1vmin;
+    font-size: 4vmin;
+    font-family: Reddit Mono;
+}
+
+.keyboard-button {
+    display: flex;
+}
+
+.keyboard-close-btn {
+    position: absolute;
+    top: 1dvh;
+    right: 1dvh;
 }
 
 @media (max-width: 480px) { 

@@ -17,10 +17,11 @@
         <div id="header">
             <img id="icon_img" src="icon.webp" alt="icon" />
             <p class="header">ukanmuri brainf*ck</p>
-            <button id="GuiedBtn" class="header_button"><img src="img/Guide.svg">Guide</button>
-            <button id="golfBtn" class="header_button"><img src="img/golf.svg">golf</button>
             <button id="infoBtn" class="header_button"><img src="img/info.svg">info</button>
-            <button id="settingBtn" class="header_button"><img src="img/settings.svg">setting</button>
+            <button id="GuiedBtn" class="header_button"><img src="img/Guide.svg">Guide</button>
+            <button id="keyboardBtn" class="header_button"><img src="img/keyboard.svg">kb</button>
+<!--         <button id="golfBtn" class="header_button"><img src="img/golf.svg">golf</button> -->
+            <button id="settingBtn" class="header_button"><img src="img/settings.svg">set</button>
         </div>
     </nav>
 
@@ -367,6 +368,25 @@
                 <button id="confirm_button">OK!</button>
             </div>
 
+        </div>
+    </div>
+
+    <div id="keyboard">
+        <button class="keyboard-close-btn" onclick="document.getElementById('keyboard').style.display='none';">&times;</button>
+        <div class="keyboard-button" id="keyboard-top">
+            <button onclick="keyboard_push('>')">></button>
+            <button onclick="keyboard_push('<')"><</button>
+            <button onclick="keyboard_push('+')">+</button>
+            <button onclick="keyboard_push('-')">-</button>
+            <button onclick="keyboard_push('.')">.</button>
+            <button onclick="keyboard_push(',')">,</button>
+            <button onclick="keyboard_push('[')">[</button>
+            <button onclick="keyboard_push(']')">]</button>
+        </div>
+        <div class="keyboard-button">
+            <button onclick="keyboard_push('←')">←</button>
+            <button onclick="keyboard_push('→')">→</button>
+            <button onclick="keyboard_push('bs')">⌫</button>
         </div>
     </div>
 
