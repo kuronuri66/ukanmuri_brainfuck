@@ -660,6 +660,7 @@ thead {
     #workspace {
         display: flex;
         flex-direction: column;
+        height :80dvh;
     }
 
     #leftspace {
@@ -674,6 +675,12 @@ thead {
 
     textarea {
         width: 90vw;
+        font-size: 5vmin;
+    }
+
+    pre{
+        font-size: 5vmin;
+        margin: 0;
     }
 
     #space {
@@ -682,13 +689,19 @@ thead {
 
     #memory_div {
         height: 15dvh;
+        margin: 0;
     }
+
     #code_div {
         height: 25dvh;
     }
 
     #console_div {
         height:30dvh;
+    }
+
+    #preview {
+        margin-bottom: 1vmin;
     }
 
     #input_div {
