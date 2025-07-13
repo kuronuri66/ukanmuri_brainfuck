@@ -664,12 +664,12 @@ thead {
 
     #leftspace {
         width: 90vw;
-        height: 40vh;
+        height: 40dvh;
     }
 
     #rightspace {
         width: 90vw;
-        height: 40vh;
+        height: 40dvh;
     }
 
     textarea {
@@ -681,18 +681,18 @@ thead {
     }
 
     #memory_div {
-        height: 15vh;
+        height: 15dvh;
     }
     #code_div {
-        height: 25vh;
+        height: 25dvh;
     }
 
     #console_div {
-        height:30vh;
+        height:30dvh;
     }
 
     #input_div {
-        height: 10vh;
+        height: 10dvh;
     }
 
     .contents {
