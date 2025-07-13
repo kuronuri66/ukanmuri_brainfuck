@@ -311,7 +311,7 @@ select {
 }
 
 #icon_img {
-    width: 9vh;
+    width: 9dvh;
 }
 
 .header {
@@ -337,7 +337,7 @@ select {
 
 .header_button img {
     margin: 0 0;
-    width: 6vh;
+    width: 6dvh;
 }
 
 
@@ -657,6 +657,14 @@ thead {
 }
 
 @media (max-width: 480px) { 
+
+    #header {
+        height: 9dvh
+    }
+
+    .header_button img {
+        width: 4dvh;
+    }
     #workspace {
         display: flex;
         flex-direction: column;
@@ -703,19 +711,28 @@ thead {
 
     #preview {
         margin-bottom: 1vmin;
+        word-break: break-all;
     }
 
     #input_div {
-        height: 10dvh;
+        height: 12dvh;
     }
 
     #footer {
-        height: 6dvh;
+        height: 7dvh;
     }
 
-    #header {
-        height: 9dvh
+    #footer button {
+        width: 5dvh;
+        height: 5dvh;
     }
+
+    .header_button {
+        height:9dvh;
+        font-size: 2dvh;
+    }
+
+    
 
     .contents {
         width: 80vw;

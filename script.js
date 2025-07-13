@@ -509,10 +509,10 @@ const speed_input = document.getElementById("speed_input");
 speed_change()
 function speed_change() {
     if (speed_select.value == "input"){
-        speed_select.style.width = "1.5vw";
+        speed_select.style.width = "15px";
         speed_input.style.display = "block";
     } else {
-        speed_select.style.width = "10vw";
+        speed_select.style.width = "10vh";
         speed_input.style.display = "none";
     }
 }
