@@ -661,6 +661,7 @@ thead {
         display: flex;
         flex-direction: column;
         height :80dvh;
+        padding-bottom: 8vh;
     }
 
     #leftspace {
@@ -706,6 +707,14 @@ thead {
 
     #input_div {
         height: 10dvh;
+    }
+
+    #footer {
+        height: 6dvh;
+    }
+
+    #header {
+        height: 9dvh
     }
 
     .contents {
