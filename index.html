@@ -372,6 +372,10 @@
     </div>
 
     <div id="keyboard">
+        <div class="Popup_title">
+            <img src="img/keyboard.svg">
+            <h2>keyboard</h2>
+        </div>
         <button class="keyboard-close-btn" onclick="document.getElementById('keyboard').style.display='none';">&times;</button>
         <div class="keyboard-button" id="keyboard-top">
             <button onclick="keyboard_push('>')">></button>
@@ -384,6 +388,9 @@
             <button onclick="keyboard_push(']')">]</button>
         </div>
         <div class="keyboard-button">
+            <button onclick="keyboard_push(' ')">space</button>
+            <button onclick="keyboard_push('\t')">tab</button>
+            <button onclick="keyboard_push('\n')">enter</button>
             <button onclick="keyboard_push('←')">←</button>
             <button onclick="keyboard_push('→')">→</button>
             <button onclick="keyboard_push('bs')">⌫</button>

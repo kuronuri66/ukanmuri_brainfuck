@@ -663,11 +663,7 @@ thead {
     top: 50px; /* 初期位置 */
     left: 50px;
     position: absolute;
-    opacity: 0.99;
-}
-
-#keyboard-top {
-    margin-top: 4vh;
+    opacity: 0.97;
 }
 
 
@@ -675,7 +671,7 @@ thead {
     width: 6vmin;
     height: 6vmin;
     margin: 1vmin;
-    font-size: 4vmin;
+    font-size: 3vmin;
     font-family: Reddit Mono;
 }
 
@@ -771,5 +767,10 @@ thead {
 
     .contents {
         width: 80vw;
+    }
+
+    .keyboard-button button{
+        width: 9vmin;
+        height: 9vmin;
     }
 }

@@ -589,30 +589,28 @@ function keyboard_push(word){
     const sentence = code.value;
     const len = sentence.length;
     const pos = code.selectionStart;
-    if(brainfuckletter.includes(word)){
-        const before = sentence.substr(0, pos);
-        const after = sentence.substr(pos, len);
-
-        code.value = before + word + after;
-
+    if(word=="←"){
+        code.focus();
+        code.setSelectionRange(pos-1, pos-1)
+    }else if(word=="→"){
         code.focus();
         code.setSelectionRange(pos+1, pos+1)
-    } else{
-        if(word=="←"){
-            code.focus();
-            code.setSelectionRange(pos-1, pos-1)
-        }else if(word=="→"){
-            code.focus();
-            code.setSelectionRange(pos+1, pos+1)
-        }else if(word=="bs"){
-            const before = sentence.substr(0, pos-1);
-            const after = sentence.substr(pos, len);
+    }else if(word=="bs"){
+        const before = sentence.substr(0, pos-1);
+        const after = sentence.substr(pos, len);
 
-            code.value = before + after;
+        code.value = before + after;
 
-            code.focus();
-            code.setSelectionRange(pos-1, pos-1)
-        }
+        code.focus();
+        code.setSelectionRange(pos-1, pos-1)
+    } else {
+    const before = sentence.substr(0, pos);
+    const after = sentence.substr(pos, len);
+
+    code.value = before + word + after;
+
+    code.focus();
+    code.setSelectionRange(pos+1, pos+1)
     }
 
 }
