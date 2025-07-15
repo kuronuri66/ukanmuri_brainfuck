@@ -516,6 +516,7 @@ thead {
     left: 50px;
     position: absolute;
     opacity: 0.3;
+    display: none;
 
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -533,7 +534,7 @@ thead {
 .keyboard-button button{
     width: 6vmin;
     height: 6vmin;
-    margin: 1vmin;
+    margin: 0.5vmin;
     font-size: 3vmin;
     font-family: Reddit Mono;
     border-radius: 1dvh;
@@ -650,6 +651,10 @@ thead {
 
     .contents {
         width: 80vw;
+    }
+
+    #keyboard {
+        opacity: 0.99;
     }
 
     .keyboard-button button{
