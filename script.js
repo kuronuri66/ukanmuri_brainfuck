@@ -18,6 +18,18 @@ let speed = 30;
 display();
 initialize();
 
+function plane_bf(code) {
+    let p_code = "";
+    let i=0;
+    while(code.length > i){
+        if(brainfuckletter.includes(code[i])){
+            p_code += code[i]
+        }
+        i++
+    }
+    return(p_code);
+}
+
 function initialize() {
     i = 0;
     pointer = 0;
@@ -34,12 +46,11 @@ function play() {
     play.style.display = 'none';
     if (play_==true){
         initialize();
-        const code = document.getElementById("code").value;
         
-        preview.innerHTML = code;
+        preview.innerHTML = plane_bf(document.getElementById('code').value);
         const input = document.getElementById("input").value;
         const bit = document.getElementById("cell_size").value;
-        brainfuck(code,input,bit);
+        brainfuck(plane_bf(document.getElementById('code').value),input,bit);
     } else {
         play_ = true;
     }
