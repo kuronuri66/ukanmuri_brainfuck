@@ -520,11 +520,12 @@ function speed_change() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const keyboard = document.getElementById('keyboard');
+    const keyboard_head = document.getElementById('keyboard-head');
     let isDragging = false;
     let offsetX, offsetY; // 要素内のクリックされた位置と要素の左上からの差
 
     // ドラッグ開始
-    keyboard.addEventListener('mousedown', (e) => {
+    keyboard_head.addEventListener('mousedown', (e) => {
         isDragging = true;
         keyboard.classList.add('dragging');
 
@@ -555,7 +556,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // **タッチデバイス対応**
-    keyboard.addEventListener('touchstart', (e) => {
+    keyboard_head.addEventListener('touchstart', (e) => {
         isDragging = true;
         keyboard.classList.add('dragging');
 

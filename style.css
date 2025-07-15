@@ -22,154 +22,6 @@ label {
   font-weight: 400;
   font-style: normal;
 }
-:focus {
-  outline: none;
-}
-
-
-:focus {
-  outline: none;
-}
-
-h1 {
-    font-size: 4vmin;
-    font-family: sans-serif;
-}
-
-h2 {
-    font-family: sans-serif;
-}
-
-label {
-    font-size: 3vmin;
-    font-family: sans-serif;
-}
-
-.reddit-mono-RedditMono {
-  font-family: "Reddit Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-:focus {
-  outline: none;
-}
-
-h1 {
-    font-size: 4vmin;
-    font-family: sans-serif;
-}
-
-h2 {
-    font-family: sans-serif;
-}
-
-label {
-    font-size: 3vmin;
-    font-family: sans-serif;
-}
-
-.reddit-mono-RedditMono {
-  font-family: "Reddit Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-:focus {
-  outline: none;
-}
-
-h1 {
-    font-size: 4vmin;
-    font-family: sans-serif;
-}
-
-h2 {
-    font-family: sans-serif;
-}
-
-label {
-    font-size: 3vmin;
-    font-family: sans-serif;
-}
-
-.reddit-mono-RedditMono {
-  font-family: "Reddit Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-:focus {
-  outline: none;
-}
-
-h1 {
-    font-size: 4vmin;
-    font-family: sans-serif;
-}
-
-h2 {
-    font-family: sans-serif;
-}
-
-label {
-    font-size: 3vmin;
-    font-family: sans-serif;
-}
-
-.reddit-mono-RedditMono {
-  font-family: "Reddit Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-h1 {
-    font-size: 4vmin;
-    font-family: sans-serif;
-}
-
-h2 {
-    font-family: sans-serif;
-}
-
-label {
-    font-size: 3vmin;
-    font-family: sans-serif;
-}
-
-.reddit-mono-RedditMono {
-  font-family: "Reddit Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-:focus {
-  outline: none;
-}
-
-h1 {
-    font-size: 4vmin;
-    font-family: sans-serif;
-}
-
-h2 {
-    font-family: sans-serif;
-}
-
-label {
-    font-size: 3vmin;
-    font-family: sans-serif;
-}
-
-.reddit-mono-RedditMono {
-  font-family: "Reddit Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
 
 body {
     color: whitesmoke;
@@ -664,6 +516,11 @@ thead {
     left: 50px;
     position: absolute;
     opacity: 0.97;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
@@ -683,6 +540,23 @@ thead {
     position: absolute;
     top: 1dvh;
     right: 1dvh;
+    width: 5dvh;
+    height: 5dvh;
+    font-size: 4dvh;
+}
+
+#keyboard-head {
+    cursor: grab;
+    padding: 1dvh;
+    background-color: #131313;
+}
+
+#keyboard-head:active {
+    cursor: grabbing;
+}
+
+#keyboard-title {
+    margin: 0;
 }
 
 @media (max-width: 480px) { 

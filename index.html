@@ -164,13 +164,6 @@
                 </div>
                 <div id="table">
                     <table class="table">
-                        <thead>
-                            <tr>
-                                <th>10進数 decimal number</th>
-                                <th>16進数 Hexadecimal</th>
-                                <th>文字 letter</th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr><td>10</td><td>0x0a</td><td>改行</td></tr>
                             <tr><td>32</td><td>0x20</td><td>空白文字</td></tr>
@@ -372,11 +365,13 @@
     </div>
 
     <div id="keyboard">
-        <div class="Popup_title">
-            <img src="img/keyboard.svg">
-            <h2>keyboard</h2>
+        <div id="keyboard-head">
+            <div class="Popup_title">
+                <img src="img/keyboard.svg" draggable="false">
+                <h2 id="keyboard-title">keyboard</h2>
+            </div>
+            <button class="keyboard-close-btn" onclick="document.getElementById('keyboard').style.display='none';">&times;</button>
         </div>
-        <button class="keyboard-close-btn" onclick="document.getElementById('keyboard').style.display='none';">&times;</button>
         <div class="keyboard-button" id="keyboard-top">
             <button onclick="keyboard_push('>')">></button>
             <button onclick="keyboard_push('<')"><</button>
