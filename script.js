@@ -10,6 +10,7 @@ let input_i;
 let play_ = true;
 const brainfuckletter = ['<', '>', '+', '-', '.', ',', '[' ,"]"];
 let speed = 30;
+let console_row = 0;
 
 //const pause = document.getElementById('pause');
 
@@ -37,6 +38,7 @@ function initialize() {
     memory = new Array(Number(document.getElementById("memory_size").value)).fill(0);
     result = "";
     input_i = 0;
+
 }
 
 function play() {
@@ -46,6 +48,10 @@ function play() {
     play.style.display = 'none';
     if (play_==true){
         initialize();
+
+        //result
+        console_row++
+        document.getElementById("console").innerHTML += "<div class='console-raw-div'><label>> </label><pre id='console_" + console_row + "'class='result_pre'></pre></div>"
         
         preview.innerHTML = plane_bf(document.getElementById('code').value);
         const input = document.getElementById("input").value;
@@ -67,6 +73,8 @@ function pause() {
 function stop() {
     if (play_ == true){
         i = code.length + 1;
+    }else {
+        initialize()
     }
 }
 
@@ -87,18 +95,21 @@ function brainfuck(code,input,bit) {
 
         }else if (code[i]==">") {
             pointer++;
+            if (pointer > Number(document.getElementById("memory_size").value) - 1) {
+                pointer = 0;
+            }
 
         }else if (code[i]=="<") {
             pointer--;
             if (pointer<0) {
-                document.getElementById("console").innerHTML += ("ERROR: Pointer cannot be decremented past 0.  (" + i +")<br>");
+                pointer = Number(document.getElementById("memory_size").value)-1;
             }
 
         }else if (code[i]==".") {
             console.log(i);
             result += String.fromCharCode(memory[pointer]);
 
-            document.getElementById("console").innerHTML += ("> "+result+"<br>");
+            document.getElementById("console_" + console_row).innerHTML = (result);
             scrollToBottom()
 
         }else if (code[i]==",") {

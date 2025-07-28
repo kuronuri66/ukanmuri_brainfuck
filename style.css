@@ -108,6 +108,7 @@ pre {
     overflow-y: scroll;
     padding: 1dvh;
     font-family: Reddit Mono;
+    margin:0
 }
 
 .highlight {
@@ -253,6 +254,28 @@ select {
 #console {
     height:40dvh;
     line-height: 1.5;
+}
+
+.result_pre {
+    overflow: hidden;
+    margin: 1vmin;
+    background-color: #1b1c1b;
+    min-height: 3.5dvh;
+}
+
+.console-raw-div {
+    display: flex;
+    justify-content: center;
+}
+
+.console-raw-div label {
+    text-align: center;
+    font-size: 3vmin;
+}
+
+#preview {
+    margin-bottom: 1vmin;
+    word-break: break-all;
 }
 
 #input_div {
@@ -661,4 +684,32 @@ thead {
         width: 9vmin;
         height: 9vmin;
     }
+}
+
+/* スクロールバー全体のスタイル */
+::-webkit-scrollbar {
+  width: 12px; /* スクロールバーの幅 (垂直方向の場合) */
+  background-color: #2c2c2c; /* スクロールバーの背景色 (トラック部分) - ダークグレー */
+}
+
+/* スクロールバーのツマミ（動く部分）のスタイル */
+::-webkit-scrollbar-thumb {
+  background-color: #555; /* ツマミの色 - 少し明るいグレー */
+  border-radius: 6px; /* ツマミの角を丸くする */
+  border: 3px solid #2c2c2c; /* ツマミの周りに余白と背景色と同じ境界線 */
+}
+
+/* スクロールバーのツマミにホバーした時のスタイル */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777; /* ホバー時のツマミの色 */
+}
+
+/* スクロールバーのトラック（ツマミが動くレール）のスタイル */
+::-webkit-scrollbar-track {
+  background-color: #2c2c2c; /* トラックの色 - ダークグレー */
+}
+
+html {
+  scrollbar-color: #555 #2c2c2c;
+  scrollbar-width: thin;
 }
