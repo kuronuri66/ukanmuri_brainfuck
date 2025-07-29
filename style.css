@@ -446,6 +446,10 @@ thead {
     text-align: left;
 }
 
+small {
+    opacity: 0.5;
+}
+
 .contents {
     margin: 2vmin;
     width: 50vw;
