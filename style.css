@@ -259,7 +259,6 @@ select {
 .result_pre {
     overflow: hidden;
     margin: 1vmin;
-    background-color: #1b1c1b;
     min-height: 3.5dvh;
 }
 
@@ -270,7 +269,9 @@ select {
 
 .console-raw-div label {
     text-align: center;
-    font-size: 3vmin;
+    font-size: 3.5dvh;
+    margin: auto 0;
+    color: #58739e;
 }
 
 #preview {

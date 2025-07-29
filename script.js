@@ -43,7 +43,7 @@ function initialize() {
 
 function play() {
     const pause = document.getElementById('pause');
-    pause.style.display = 'block';
+    pause.style.display = 'flex';
     const play = document.getElementById('play');
     play.style.display = 'none';
     if (play_==true){
@@ -51,7 +51,7 @@ function play() {
 
         //result
         console_row++
-        document.getElementById("console").innerHTML += "<div class='console-raw-div'><label>> </label><pre id='console_" + console_row + "'class='result_pre'></pre></div>"
+        document.getElementById("console").innerHTML += "<div class='console-raw-div'><label>></label><pre id='console_" + console_row + "'class='result_pre'></pre></div>"
         
         preview.innerHTML = plane_bf(document.getElementById('code').value);
         const input = document.getElementById("input").value;
@@ -67,7 +67,7 @@ function pause() {
     const pause = document.getElementById('pause');
     pause.style.display = 'none';
     const play = document.getElementById('play');
-    play.style.display = 'block';
+    play.style.display = 'flex';
 }
 
 function stop() {
@@ -80,7 +80,6 @@ function stop() {
 
 function brainfuck(code,input,bit) {
     if (play_==true){
-        console.log(i, code[i]);
         if (code[i]=="+") {
             memory[pointer]++;
             if (memory[pointer] > Math.pow(2, bit) - 1) {
@@ -106,9 +105,7 @@ function brainfuck(code,input,bit) {
             }
 
         }else if (code[i]==".") {
-            console.log(i);
             result += String.fromCharCode(memory[pointer]);
-
             document.getElementById("console_" + console_row).innerHTML = (result);
             scrollToBottom()
 
@@ -439,46 +436,6 @@ function code_info() {
 }
 
 
-//golfの問題関係
-const json_data = 
-[
-    {
-        "id": 1,
-        "Difficulty": 1,
-        "question": "Output 'A'",
-        "target" : [66,25,24]
-    },
-    {
-        "id": 2,
-        "Difficulty": 2,
-        "question": "Output 'HELLO WORLD!'",
-        "target" : [108,100,76]
-    }
-];
-
-const golf_Questions = document.getElementById("golf_Questions");
-let k=0;
-while (json_data.length > k) {
-    golf_Questions.innerHTML += 
-        "<div class='golf_Question'><div class='Question_contents Question_id'>"+
-        json_data[k].id+
-        "</div><div class='Question_contents Question_difficulty'>"+
-        "<img src='img/star_yellow.svg'>".repeat(json_data[k].Difficulty)+"<img src='img/star (2).svg'>".repeat(5-json_data[k].Difficulty)+
-        "</div><div class='Question_contents Question_question'>"+
-        json_data[k].question+
-        "</div><div class='Question_contents Question_target'> <img src='img/trophy_Gold.svg'>"+
-        json_data[k].target[2]+
-        "</div><div class='Question_contents Question_target'> <img src='img/trophy_Silver.svg'>"+
-        json_data[k].target[1]+
-        "</div><div class='Question_contents Question_target'> <img src='img/trophy_copper.svg'>"+
-        json_data[k].target[0]+
-        "</div>"
-    
-    k++
-}
-
-
-
 //textareaのtab対応
 function OnTabKey( e, obj ){
 
@@ -644,4 +601,6 @@ function close_keyboard() {
 const keyBtn = document.getElementById("keyboardBtn")
 keyBtn.addEventListener('click', () => {
     document.getElementById('keyboard').style.display='block';
+    document.getElementById('keyboard').style.top='50px';
+    document.getElementById('keyboard').style.left='50px';
 });
