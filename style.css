@@ -117,6 +117,7 @@ pre {
     justify-content: center; /* 主軸（横方向）で中央に寄せる */
     align-items: center; /* 交差軸（縦方向）で中央に寄せる */
     aspect-ratio: 1 / 1; 
+    cursor: pointer;
 }
 
 .title_img {

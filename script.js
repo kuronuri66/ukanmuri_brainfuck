@@ -459,28 +459,20 @@ function OnTabKey( e, obj ){
 	obj.selectionEnd = cursorPosition+1;
 }
 
-
-const checkbox=document.getElementById("storage_box");
 // 対象となるテキストエリアにonkeydownイベントを追加する
 document.getElementById( "code" ).onkeydown = function( e ){ OnTabKey( e, this ); }
-if(checkbox.checked){
-    if (localStorage.getItem('code')=="" || !localStorage.getItem(code)) {
-        localStorage.setItem('code', 
-            "+++++++++++[>++++++>++++++>+++>++++++++<<<<-]>+++>++++++.<.>++++..+++.>-.>-.<<.>>-----.<<---.<-.>>+."
-        );
-    }
+if (localStorage.getItem('code')=="" || localStorage.getItem(code)) {
+    localStorage.setItem('code', 
+        "+++++++++++[>++++++>++++++>+++>++++++++<<<<-]>+++>++++++.<.>++++..+++.>-.>-.<<.>>-----.<<---.<-.>>+."
+    );
 }
 
 function code_change() {
-    if(checkbox.checked) {
-        localStorage.setItem('code', document.getElementById("code").value);
-    }
+    localStorage.setItem('code', document.getElementById("code").value);
 }
 
 window.addEventListener("load", () =>{
-    if(checkbox.checked) {
-        document.getElementById("code").value = localStorage.getItem('code');
-    }
+    document.getElementById("code").value = localStorage.getItem('code');
 });
 
 //speed_input
