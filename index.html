@@ -85,7 +85,7 @@
 
     <nav id="footer-bg">
         <div id="footer">
-            <button id="play" class="button" onclick="play()">
+            <button id="play" class="button" onclick="play(); document.getElementById('running').style.display = 'block'">
                 <img src="img/play.svg">
             </button>
             <button id="pause" class="button" onclick="pause()" style="font-size: 3vh; display: none;">
@@ -94,6 +94,7 @@
             <button class="button" onclick="stop()" style="font-size: 3vh;">
                 <img src="img/stop.svg">
             </button>
+            <span id="running">実行中...</span>
             <div id="speed">
                 <img src="img/speed.svg" for="speed_input">
                 <label for="speed_input">speed:</label>
@@ -326,20 +327,6 @@
                     </div>
                     <div class="set_element">
                         <label>memoryの数: <input type="number" id="memory_size" class="setting-input" value="1024"/> 個</label>
-                    </div>
-                </div>
-                <div class="set-kind">
-                    <div class="Popup_title">
-                        <h2>strage</h2>
-                    </div>
-                    <div class="set_element">
-                        <label>
-                            <input type="checkbox" id="storage_box" class="setting-input" value="8" onclick="localcheck()" checked/>
-                            local storage 
-                        </label>
-                    </div>
-                    <div class="set_element">
-                        <button>local storage削除</button>
                     </div>
                 </div>
             </div>

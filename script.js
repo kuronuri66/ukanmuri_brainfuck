@@ -11,6 +11,7 @@ let play_ = true;
 const brainfuckletter = ['<', '>', '+', '-', '.', ',', '[' ,"]"];
 let speed = 30;
 let console_row = 0;
+let step = 0;
 
 //const pause = document.getElementById('pause');
 
@@ -38,8 +39,11 @@ function initialize() {
     memory = new Array(Number(document.getElementById("memory_size").value)).fill(0);
     result = "";
     input_i = 0;
+    step = 0;
 
 }
+
+document.getElementById("running").style.display = 'none'
 
 function play() {
     const pause = document.getElementById('pause');
@@ -68,6 +72,8 @@ function pause() {
     pause.style.display = 'none';
     const play = document.getElementById('play');
     play.style.display = 'flex';
+
+    document.getElementById("running").style.display = 'none'
 }
 
 function stop() {
@@ -106,7 +112,6 @@ function brainfuck(code,input,bit) {
 
         }else if (code[i]==".") {
             result += String.fromCharCode(memory[pointer]);
-            document.getElementById("console_" + console_row).innerHTML = (result);
             scrollToBottom()
 
         }else if (code[i]==",") {
@@ -158,20 +163,27 @@ function brainfuck(code,input,bit) {
                 }
             }
         }
-
+        console.log(step)
+        step++
+        /*/
+        if(step>5000) {
+            document.getElementById("console").innerHTML += "無限ループを検知しました";
+            i = code.length + 1;
+        }
+        /*/
         i++;
-    }
-
-    display();
-    if (document.getElementById("speed_select").value == "input"){
-        speed = document.getElementById("speed_input").value
-    } else {
-        speed = Number(document.getElementById("speed_select").value)
     }
     if (code.length > i){
         if (speed == "0") {
             brainfuck(code);
         } else { 
+            display();
+            if (document.getElementById("speed_select").value == "input"){
+                speed = document.getElementById("speed_input").value
+            } else {
+                speed = Number(document.getElementById("speed_select").value)
+            }
+            document.getElementById("console_" + console_row).innerHTML = (result);
             setTimeout(function() { brainfuck(code,input,bit); }, speed);
         }
     } else {
@@ -179,6 +191,11 @@ function brainfuck(code,input,bit) {
         pause.style.display = 'none';
         const play = document.getElementById('play');
         play.style.display = 'block';
+
+        display();
+        document.getElementById("console_" + console_row).innerHTML = (result);
+
+        document.getElementById("running").style.display = 'none';
     }
 }
 
@@ -459,7 +476,7 @@ function OnTabKey( e, obj ){
 	obj.selectionEnd = cursorPosition+1;
 }
 
-// 対象となるテキストエリアにonkeydownイベントを追加する
+// localstorage
 document.getElementById( "code" ).onkeydown = function( e ){ OnTabKey( e, this ); }
 if (localStorage.getItem('code')=="" || localStorage.getItem(code)) {
     localStorage.setItem('code', 
@@ -534,7 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const touch = e.touches[0]; // 最初の指の情報を取得
         offsetX = touch.clientX - keyboard.getBoundingClientRect().left;
         offsetY = touch.clientY - keyboard.getBoundingClientRect().top; // スクロールなど、デフォルトのタッチイベントを無効化
-    });
+    }, { passive: true });
 
     document.addEventListener('touchmove', (e) => {
         if (!isDragging) return;
