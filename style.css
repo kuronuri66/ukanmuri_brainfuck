@@ -3,7 +3,7 @@ h1 h2 h3 p label {
 }
 
 :focus {
-  outline: none;
+    outline: 3px solid #444;
 }
 
 h2 {
@@ -261,13 +261,14 @@ select {
 
 .result_pre {
     overflow: hidden;
-    margin: 1vmin;
+    margin: 0.5vmin;
     min-height: 3.5dvh;
 }
 
 .console-raw-div {
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid #555;
 }
 
 .console-raw-div label {
