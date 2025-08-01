@@ -174,13 +174,13 @@ function brainfuck(code,input,bit) {
         i++;
     }
     if (document.getElementById("speed_select").value == "input"){
-        speed = document.getElementById("speed_input").value
+        speed = Number(document.getElementById("speed_input").value);
     } else {
         speed = Number(document.getElementById("speed_select").value)
     }
     if (code.length > i){
-        if (speed == "0") {
-            brainfuck(code);
+        if (speed == 0 && step % 5000 != 0) {
+            brainfuck(code,input,bit);
         } else { 
             display();
             document.getElementById("console_" + console_row).innerHTML = (result);
