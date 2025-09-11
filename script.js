@@ -240,7 +240,7 @@ function display(){
     document.getElementById("memory").innerHTML = memoryHtml;
 
     //preview
-    preview_highlight(i,"preview")
+    preview_highlight(i - 1,"preview")
 
 }
 
