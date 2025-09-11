@@ -36,7 +36,7 @@ img {
 
 textarea {
     width: 42.5vw;;
-    background-color: #191a19;
+    background-color: #1b1b1b;
     color: whitesmoke;
     border: none;
     resize: none;
@@ -98,7 +98,7 @@ pre {
     flex-grow: 1;
     overflow: scroll;
     font-size: 2.5dvh;
-    background-color: #1a1b1a;
+    background-color: #1b1b1b;
     overflow-x: hidden;  /* 横スクロールバーを非表示 */
     overflow-y: scroll;
     padding: 1dvh;
