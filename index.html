@@ -137,7 +137,7 @@
                             <tr><td>,</td><td>1バイトの入力を受け取り、データポインタが指す場所に格納する。</td></tr>
                             <tr><td>[</td><td>データポインタが指すバイトの値が0の場合、命令ポインタを対応する ] の直後までジャンプさせる。</td></tr>
                             <tr><td>]</td><td>データポインタが指すバイトの値が0でない場合、命令ポインタを対応する [ の直後までジャンプさせる。</td></tr>
-
+                            <tr><td>{Number}</td><td>{}の前のコードを指定された数、繰り返す※独自の仕様です</td></tr>
                         </tbody>
                     </table>
                     <table id="CommandsTable-en">
@@ -156,6 +156,7 @@
                             <tr><td>,</td><td>Accept one byte of input, storing it at the data pointer.</td></tr>
                             <tr><td>[</td><td>If the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command.</td></tr>
                             <tr><td>]</td><td>If the byte at the data pointer is non-zero, then instead of moving the instruction pointer forward to the next command, jump it back to the command after the matching [ command.</td></tr>
+                            <tr><td>{Number}</td><td>Execute the code before "{}" for the specified number of times. (original)</td></tr>
 
                         </tbody>
                     </table>

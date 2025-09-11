@@ -22,10 +22,27 @@ initialize();
 
 function plane_bf(code) {
     let p_code = "";
-    let i=0;
+    let i = 0;
+    let number = "";
+    let BracesStart = 0;
     while(code.length > i){
         if(brainfuckletter.includes(code[i])){
-            p_code += code[i]
+            p_code += code[i];
+        }else{
+            if(code[i]=="{"){
+                BracesStart = i;
+                i++
+                while(!(code[i]=="}")){
+                    number += code[i];
+                    i++
+                    if(code.length<i){
+                        document.getElementById("console").innerHTML += ("ERROR: Mismatched '}'.  (" + BracesStart +")<br>");
+                        break;
+                    }
+                }
+                console.log(number);
+                p_code += code[BracesStart - 1].repeat(Number(number) - 1)
+            }
         }
         i++
     }
@@ -60,7 +77,7 @@ function play() {
         preview.innerHTML = plane_bf(document.getElementById('code').value);
         const input = document.getElementById("input").value;
         const bit = document.getElementById("cell_size").value;
-        brainfuck(plane_bf(document.getElementById('code').value),input,bit);
+        brainfuck(plane_bf(document.getElementById('code').value),input+"\n",bit);
     } else {
         play_ = true;
     }
@@ -119,6 +136,8 @@ function brainfuck(code,input,bit) {
                 memory[pointer] = input.charCodeAt(input_i);
                 console.log(input.charCodeAt(input_i), input_i)
                 input_i++
+            }else {
+                memory[pointer] = 0;
             }
 
         }else if (code[i]=="]" && memory[pointer]!=0) {
