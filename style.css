@@ -547,7 +547,7 @@ small {
     top: 50px; /* 初期位置 */
     left: 50px;
     position: absolute;
-    opacity: 0.3;
+    opacity: 0.99;
     display: none;
 
     -webkit-user-select: none;
