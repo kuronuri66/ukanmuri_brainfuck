@@ -23,17 +23,23 @@ initialize();
 function plane_bf(code) {
     let p_code = "";
     let i = 0;
-    let number = "";
     let BracesStart = 0;
     while(code.length > i){
         if(brainfuckletter.includes(code[i])){
             p_code += code[i];
         }else{
             if(code[i]=="{"){
+                let number = "";
                 BracesStart = i;
+                if(!brainfuckletter.includes(code[BracesStart - 1])){
+                    document.getElementById("console").innerHTML += ("ERROR: Mismatched '{'.  (" + BracesStart +")<br>");
+                    break;
+                }
                 i++
                 while(!(code[i]=="}")){
-                    number += code[i];
+                    if(!isNaN(code[i])){
+                        number += code[i];
+                    }
                     i++
                     if(code.length<i){
                         document.getElementById("console").innerHTML += ("ERROR: Mismatched '}'.  (" + BracesStart +")<br>");
@@ -507,9 +513,9 @@ if (localStorage.getItem('code')=="" || localStorage.getItem(code)) {
     );
 }
 
-function code_change() {
+document.getElementById("code").addEventListener('input', function(){
     localStorage.setItem('code', document.getElementById("code").value);
-}
+});
 
 window.addEventListener("load", () =>{
     document.getElementById("code").value = localStorage.getItem('code');
