@@ -333,7 +333,11 @@ copy_button.addEventListener('click', async () => {
     try {
         // テキストをクリップボードに書き込む
         await navigator.clipboard.writeText(document.getElementById("code").value);
-        alert('テキストがコピーされました！');
+        copy_button.style.backgroundColor="Green";
+        setTimeout(() => {
+            const copy_button = document.getElementById("copy_button");
+            copy_button.style.backgroundColor="";
+        }, 500);
         console.log('Text copied to clipboard!');
     } catch (err) {
         // コピーに失敗した場合
