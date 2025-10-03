@@ -475,11 +475,6 @@ small {
     display: flex;
 }
 
-.golf_Question img {
-    align-items: end;
-    width: 2vw;
-}
-
 .Question_contents {
     margin: 0.5dvh;
     display: block;
