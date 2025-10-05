@@ -6,6 +6,7 @@ let result
 let ireko_check
 let result_i
 let preview = document.querySelector("#preview");
+const code = document.getElementById("code");
 let input_i;
 let play_ = true;
 const brainfuckletter = ['<', '>', '+', '-', '.', ',', '[' ,"]"];
@@ -19,6 +20,14 @@ let step = 0;
 
 display();
 initialize();
+
+preview.addEventListener('click',function() {
+    console.log("click");
+    code.style.display = "block";
+    const preview = document.getElementById("preview");
+    preview.style.display = "none";
+    code.focus();
+});
 
 function plane_bf(code) {
     let p_code = "";
@@ -73,6 +82,14 @@ function play() {
     pause.style.display = 'flex';
     const play = document.getElementById('play');
     play.style.display = 'none';
+
+    code.style.display = "none";
+    const preview = document.getElementById("preview");
+    preview.style.display = "block";
+    if(!speedCheck()==0){
+        document.getElementById("running").style.display = 'block'
+    }
+
     if (play_==true){
         initialize();
 
@@ -95,16 +112,28 @@ function pause() {
     pause.style.display = 'none';
     const play = document.getElementById('play');
     play.style.display = 'flex';
-
-    document.getElementById("running").style.display = 'none'
 }
 
 function stop() {
+    const code = document.getElementById("code");
+    code.style.display = "block";
+    const preview = document.getElementById("preview");
+    preview.style.display = "none";
     if (play_ == true){
         i = code.length + 1;
     }else {
         initialize()
     }
+}
+
+function speedCheck(){
+    let s;
+    if (document.getElementById("speed_select").value == "input"){
+        s = Number(document.getElementById("speed_input").value);
+    } else {
+        s = Number(document.getElementById("speed_select").value)
+    }
+    return(s)
 }
 
 function brainfuck(code,input,bit) {
@@ -188,7 +217,6 @@ function brainfuck(code,input,bit) {
                 }
             }
         }
-        console.log(step)
         step++
         /*/
         if(step>5000) {
@@ -212,6 +240,12 @@ function brainfuck(code,input,bit) {
             }
         } else { 
             display();
+            console.log(document.activeElement == document.getElementById("code"));
+            if(document.activeElement != document.getElementById("code")){
+                document.getElementById("code").style.display = "none";
+                const preview = document.getElementById("preview");
+                preview.style.display = "block";
+            }
             document.getElementById("console_" + console_row).innerHTML = (result);
             setTimeout(function() { brainfuck(code,input,bit); }, speed);
         }

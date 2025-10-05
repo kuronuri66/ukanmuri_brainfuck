@@ -35,7 +35,6 @@ img {
 }
 
 textarea {
-    width: 42.5vw;;
     background-color: #1b1b1b;
     color: whitesmoke;
     border: none;
@@ -46,6 +45,7 @@ textarea {
     tab-size: 4;
     word-break: break-all;
     white-space: pre-wrap;
+    padding: 1dvh;
 
 }
 
@@ -55,9 +55,9 @@ button {
     color: whitesmoke;
     cursor: pointer;
     text-align: center;
-    display: flex; /* Flexコンテナにする */
-    justify-content: center; /* 主軸（横方向）で中央に寄せる */
-    align-items: center; /* 交差軸（縦方向）で中央に寄せる */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input[type="number"] {
@@ -281,6 +281,9 @@ select {
 #preview {
     margin-bottom: 1vmin;
     word-break: break-all;
+    height: 55dvh;
+    display: none;
+    font-size: 3dvh;
 }
 
 #input_div {
@@ -619,11 +622,15 @@ small {
     #leftspace {
         width: 90vw;
         height: 40dvh;
+        margin: 0 auto;
+
     }
 
     #rightspace {
         width: 90vw;
         height: 40dvh;
+        margin: 0 auto;
+
     }
 
     textarea {

@@ -17,7 +17,7 @@
 <body bgcolor="#191919">
     <nav id="header-bg">
         <div id="header">
-            <img id="icon_img" src="icon.svg" alt="icon" />
+            <img id="icon_img" src="icon/icon.svg" alt="icon" />
             <p class="header">ukanmuri brainf*ck</p>
             <button id="infoBtn" class="header_button"><img src="img/info.svg">info</button>
             <button id="GuiedBtn" class="header_button"><img src="img/Guide.svg">Guide</button>
@@ -60,6 +60,7 @@
                     </label>
                 </div>
                 <textarea id="code" onchange="code_change()"></textarea>
+                <pre id="preview"></pre>
             </div>
         </div>
         <div id="space"></div>
@@ -69,8 +70,6 @@
                     <img src="img/terminal.svg">
                     <p>console</p>
                 </div>
-                
-                <pre id="preview"></pre>
                 <pre id="console"></pre>
             </div>
             <div id="input_div">
@@ -85,7 +84,7 @@
 
     <nav id="footer-bg">
         <div id="footer">
-            <button id="play" class="button" onclick="play(); document.getElementById('running').style.display = 'block'">
+            <button id="play" class="button" onclick="play()">
                 <img src="img/play.svg">
             </button>
             <button id="pause" class="button" onclick="pause()" style="font-size: 3vh; display: none;">
