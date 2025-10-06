@@ -352,7 +352,7 @@ select {
 
 
 .popup-overlay {
-    display: none; /* JavaScriptで'flex'に変更して表示 */
+    display: flex; /* JavaScriptで'flex'に変更して表示 */
     position: fixed;
     top: 0;
     left: 0;
@@ -611,7 +611,7 @@ small {
     .header_button img {
         width: 4dvh;
     }
-    
+
     #workspace {
         display: flex;
         flex-direction: column;
