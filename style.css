@@ -611,6 +611,7 @@ small {
     .header_button img {
         width: 4dvh;
     }
+    
     #workspace {
         display: flex;
         flex-direction: column;

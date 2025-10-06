@@ -457,8 +457,11 @@ golfBtn.addEventListener('click', () => {
 });
 /*/
 
+myPopup.style.display = 'flex';
+choosepopup("info");
+
 infoBtn.addEventListener('click', () => {
-    myPopup.style.display = 'flex'; // 'flex'で中央寄せを適用
+    myPopup.style.display = 'flex';
     choosepopup("info");
 });
 
