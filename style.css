@@ -409,6 +409,14 @@ select {
     display: flex;
 }
 
+.popup-content p {
+    font-size: 2.5dvh;
+}
+
+.contents{
+    display: none;
+}
+
 
 table {
     text-align: left;
@@ -464,45 +472,6 @@ small {
 
 .Popup_title img {
     width: 6vmin;
-}
-
-#golf_Questions {
-    text-align: left;
-}
-
-.golf_Question {
-    width: auto;
-    background-color: #171717;
-    padding: 1dvh;
-    margin: 1dvh 0;
-    display: flex;
-}
-
-.Question_contents {
-    margin: 0.5dvh;
-    display: block;
-    background-color: #141414;
-    padding: 1dvh;
-    justify-content: center;
-}
-
-.Question_id {
-    width: 2vw;
-}
-
-.Question_difficulty {
-    width: 10vw;
-}
-
-.Question_question {
-    width: 20vw;
-}
-
-.Question_target {
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .setting-input {

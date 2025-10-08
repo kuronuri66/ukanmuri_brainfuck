@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
-    <title>ukanmuri brainf*ck</title>
+    <title>ukanmuri brainf*ck interpreter</title>
+    <meta name="description" 
+    content="ukanmuri_brainfuckinterpreterはbrainfuck(brainf*ck)をweb上で楽しく動かすことをテーマに作られたinterpreterです。">
 
     <link rel="icon" href="icon/favicon.ico" sizes="any">
     <link rel="icon" href="icon/icon.svg" type="image/svg+xml">
@@ -13,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono&display=swap" rel="stylesheet">
+
+
     <meta name="google-site-verification" content="f6LXY31N1Ng72zveoTxydf9yCadhd7FvHLzNJSf_g10" />
 </head>
 
@@ -150,10 +154,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>></td><td>Increment the data pointer.</td></tr>
-                            <tr><td><</td><td>Decrement the data pointer.</td></tr>
-                            <tr><td>+</td><td>Increment the byte at the data pointer.</td></tr>
-                            <tr><td>-</td><td>Decrement the byte at the data pointer.</td></tr> 
+                            <tr><td>></td><td>Increment the data pointer by one (to point to the next cell to the right).</td></tr>
+                            <tr><td><</td><td>Decrement the data pointer by one (to point to the next cell to the left).</td></tr>
+                            <tr><td>+</td><td>Increment the byte at the data pointer by one.</td></tr>
+                            <tr><td>-</td><td>Decrement the byte at the data pointer by one.</td></tr> 
                             <tr><td>.</td><td>Output the byte at the data pointer.</td></tr>
                             <tr><td>,</td><td>Accept one byte of input, storing it at the data pointer.</td></tr>
                             <tr><td>[</td><td>If the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command.</td></tr>
@@ -240,6 +244,9 @@
                             <tr><td>94</td><td>0x5e</td><td>^</td></tr>
                             <tr><td>95</td><td>0x5f</td><td>_</td></tr>
                             <tr><td>96</td><td>0x60</td><td>`</td></tr>
+                            <tr><td>|</td><td></td><td></td></tr>
+                            <tr><td>|</td><td></td><td></td></tr>
+
                         </tbody>
                     </table>
                     <table class="table">
@@ -274,6 +281,10 @@
                             <tr><td>124</td><td>0x7c</td><td>|</td></tr>
                             <tr><td>125</td><td>0x7d</td><td>}</td></tr>
                             <tr><td>126</td><td>0x7e</td><td>~</td></tr>
+                            <tr><td>|</td><td></td><td></td></tr>
+                            <tr><td>|</td><td></td><td></td></tr>
+                            <tr><td>|</td><td></td><td></td></tr>
+                            <tr><td>|</td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -284,8 +295,8 @@
             </div>
 
             <div id="infocontent" class="contents">
-                <h1>ukanmuri brainf*ck v0.8</h1>
-                <p>ukanmuri brainfuckはbraunfuckを楽しく動かすことをテーマに作られたサイトです。</p>
+                <h1>ukanmuri_brainf*ck v0.8</h1>
+                <p>ukanmuri brainfuckはbrainfuckを楽しく動かすことをテーマに作られたサイトです。</p>
                 <p>(Ukanmuri Brainfuck is a website created with the theme of making Brainfuck fun to run.)</p>
                 <p>バグ報告・新機能提案は
                     <a href="https://x.com/jo6666_sh/status/1950077264424816778">ukanmuriのx</a>
