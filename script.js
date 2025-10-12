@@ -246,7 +246,7 @@ function brainfuck(code,input,bit) {
                 const preview = document.getElementById("preview");
                 preview.style.display = "block";
             }
-            document.getElementById("console_" + console_row).innerHTML = (result);
+            document.getElementById("console_" + console_row).textContent = (result);
             setTimeout(function() { brainfuck(code,input,bit); }, speed);
         }
     } else {
@@ -256,7 +256,7 @@ function brainfuck(code,input,bit) {
         play.style.display = 'block';
 
         display();
-        document.getElementById("console_" + console_row).innerHTML = (result);
+        document.getElementById("console_" + console_row).textContent = (result);
 
         document.getElementById("running").style.display = 'none';
     }
@@ -506,20 +506,29 @@ myPopup.addEventListener('click', (event) => {
 //codeのinfo関係
 function code_info() {
     const code = document.getElementById("code");
-    const text = code.value; // textareaの現在値を取得
+    const text = code.value;
     let countl = 0;
+    let CommandCount = {">": 0, "<": 0, "+": 0, "-": 0, ".": 0, ",": 0, "[": 0, "]": 0,};
 
-    // テキスト内の各文字をループでチェック
     for (let i = 0; i < text.length; i++) {
         const char = text[i];
-        // 現在の文字が特定の文字配列に含まれているかチェック
         if (brainfuckletter.includes(char)) {
             countl++;
+            CommandCount[text[i]]++;
         }
     }
 
-    // 結果をHTMLに表示
     document.getElementById('count').innerHTML = countl+"/"+text.length;
+
+    document.getElementById('count>').innerHTML = CommandCount[">"];
+    document.getElementById('count<').innerHTML = CommandCount["<"];
+    document.getElementById('count+').innerHTML = CommandCount["+"];
+    document.getElementById('count-').innerHTML = CommandCount["-"];
+    document.getElementById('count.').innerHTML = CommandCount["."];
+    document.getElementById('count,').innerHTML = CommandCount[","];
+    document.getElementById('count[').innerHTML = CommandCount["["];
+    document.getElementById('count]').innerHTML = CommandCount["]"];
+
 }
 
 

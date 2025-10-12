@@ -339,6 +339,24 @@
                     <h2>Code Info</h2>
                 </div>
                 <label>count: <label id="count"></label></label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>command</th>
+                            <th>count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>></td><td id="count>"></td></tr>
+                        <tr><td><</td><td id="count<"></td></tr>
+                        <tr><td>+</td><td id="count+"></td></tr>
+                        <tr><td>-</td><td id="count-"></td></tr>
+                        <tr><td>.</td><td id="count."></td></tr>
+                        <tr><td>,</td><td id="count,"></td></tr>
+                        <tr><td>[</td><td id="count["></td></tr>
+                        <tr><td>]</td><td id="count]"></td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <div id="confirm_content" class="contents">
@@ -370,7 +388,7 @@
             <button onclick="keyboard_push(',')">,</button>
             <button onclick="keyboard_push('[')">[</button>
             <button onclick="keyboard_push(']')">]</button>
-            <button onclick="keyboard_push('{}')">{</button>
+            <button onclick="keyboard_push('{}')">{}</button>
         </div>
         <div class="keyboard-button">
             <button onclick="keyboard_push(' ')">space</button>
