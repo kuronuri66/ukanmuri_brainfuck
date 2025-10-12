@@ -389,7 +389,7 @@ select {
 }
 
 #Guidecontent {
-    display: block;
+    display: none;
 }
 
 #infocontent {
