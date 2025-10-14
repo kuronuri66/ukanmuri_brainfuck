@@ -95,7 +95,7 @@ function play() {
 
         //result
         console_row++
-        document.getElementById("console").innerHTML += "<div class='console-raw-div'><label>></label><pre id='console_" + console_row + "'class='result_pre'></pre></div>"
+        document.getElementById("console").innerHTML += "<div class='console-raw-div'><pre class='left'>></pre><pre id='console_" + console_row + "'class='result_pre'></pre></div>"
         
         preview.innerHTML = plane_bf(document.getElementById('code').value);
         const input = document.getElementById("input").value;

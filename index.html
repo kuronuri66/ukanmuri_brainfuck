@@ -10,7 +10,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="mobilestyle.css" media="screen and (max-width: 480px)">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,6 @@
 
     <meta name="google-site-verification" content="f6LXY31N1Ng72zveoTxydf9yCadhd7FvHLzNJSf_g10" />
 </head>
-
 
 <body bgcolor="#191919">
     <nav id="header-bg">
@@ -49,22 +49,22 @@
                         <img src="img/code.svg">
                         <p>code</p>
                     </div>
-                    <label id="save_button"  class="button" onclick="save()">
+                    <button id="save_button"  class="button" onclick="save()">
                         <img src="img/download.svg">
-                    </label>
-                    <label class="button" id="load_button">
+                    </button>
+                    <button class="button" id="load_button">
                         <input id="load-file" type="file" accept=".txt" style="display:none;" onchange="load()"/>
                         <img src="img/upload.svg">
-                    </label>
-                    <label id="copy_button" class="button">
+                    </button>
+                    <button id="copy_button" class="button">
                         <img src="img/copy.svg">
-                    </label>
-                    <label id="bomb_button" class="button" onclick="myconfirm();confirm_target = 'bomb'">
+                    </button>
+                    <button id="bomb_button" class="button" onclick="myconfirm();confirm_target = 'bomb'">
                         <img src="img/bomb.svg">
-                    </label>
-                    <label id="codei_btn" class="button">
+                    </button>
+                    <button id="codei_btn" class="button">
                         <img src="img/info.svg">
-                    </label>
+                    </button>
                 </div>
                 <textarea id="code" onchange="code_change()"></textarea>
                 <pre id="preview"></pre>
@@ -244,8 +244,6 @@
                             <tr><td>94</td><td>0x5e</td><td>^</td></tr>
                             <tr><td>95</td><td>0x5f</td><td>_</td></tr>
                             <tr><td>96</td><td>0x60</td><td>`</td></tr>
-                            <tr><td>|</td><td></td><td></td></tr>
-                            <tr><td>|</td><td></td><td></td></tr>
 
                         </tbody>
                     </table>
@@ -281,10 +279,6 @@
                             <tr><td>124</td><td>0x7c</td><td>|</td></tr>
                             <tr><td>125</td><td>0x7d</td><td>}</td></tr>
                             <tr><td>126</td><td>0x7e</td><td>~</td></tr>
-                            <tr><td>|</td><td></td><td></td></tr>
-                            <tr><td>|</td><td></td><td></td></tr>
-                            <tr><td>|</td><td></td><td></td></tr>
-                            <tr><td>|</td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
