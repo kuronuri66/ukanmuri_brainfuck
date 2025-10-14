@@ -5,6 +5,10 @@
   font-style: normal;
 }
 
+* {
+    font-family: sans-serif;
+}
+
 pre {
     font-family: Reddit Mono;
 }
