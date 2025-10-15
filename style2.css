@@ -7,10 +7,9 @@
 
 * {
     font-family: sans-serif;
-}
-
-pre {
-    font-family: Reddit Mono;
+    pre {
+        font-family: Reddit Mono;
+    }
 }
 
 .nav {
