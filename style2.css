@@ -13,8 +13,8 @@
     }
 
     p{
-        margin:2vh 0;
-        font-size: 2.5vh;
+        margin:1vh 0;
+        font-size: 3vh;
     }
 }
 
@@ -158,16 +158,17 @@ body {
                         align-items: center;
                         padding:0.5vh;
 
-                        img {
-                            width:6vh;
-                            margin:auto;
-                        }
                         &:hover {
                             background-color: #333;
                         }
 
                         &:active {
                             background-color: #444;
+                        }
+
+                        img {
+                            height:4dvh;
+                            margin:auto;
                         }
                     }
 
@@ -315,6 +316,10 @@ body {
                 align-items: center;
                 display: flex;
                 aspect-ratio: 1 / 1;
+
+                img {
+                    height: 3.5dvh;
+                }
             }
 
             #speed {
@@ -322,6 +327,14 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                img {
+                    height: 3.5dvh;
+                }
+
+                label {
+                    font-size: 3dvh;
+                }
 
                 #speed_input {
                     margin: auto 1dvh;
@@ -357,6 +370,10 @@ body {
         justify-content: center; /* 中央寄せ */
         align-items: center; /* 中央寄せ */
         z-index: 1000; /* 最前面に表示 */
+
+        p{
+            font-size: 3dvh;
+        }
 
         .popup-content {
             padding: 2dvh;
@@ -433,6 +450,11 @@ body {
             }
 
             #settingcontent {
+
+                h3 {
+                    margin-left: 1vw;
+                }
+
                 table {
                     margin-left :2vw;
 
