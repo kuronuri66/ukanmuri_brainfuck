@@ -5,13 +5,6 @@
   font-style: normal;
 }
 
-* {
-    font-family: sans-serif;
-    pre {
-        font-family: Reddit Mono;
-    }
-}
-
 .nav {
     display: flex;
 
@@ -37,6 +30,8 @@ button {
 
 body {
     color: white;
+    font-family: sans-serif;
+
     && :focus{
         outline: 3px solid #444;
     }
@@ -393,6 +388,7 @@ body {
                 width: 50vw;
                 height: 70dvh;
                 text-align: left;
+                display: none;
 
                 .Popup_title {
                     display: flex;
@@ -432,7 +428,30 @@ body {
                 }
             }
 
-            
+            #infocontent {
+                display: block;
+            }
+
+            #settingcontent {
+                table {
+                    margin-left :2vw;
+
+                    tr {
+                        background-color: #1a1b1a;
+                        height: 4dvh;
+
+                        input {
+                            background-color: #131313;
+                            color: white;
+                            border: none;
+                            height: 4dvh;
+                            font-size: 3dvh;
+                            font-family: Reddit Mono;
+                            text-align: right; 
+                        }
+                    }
+                }
+            }
 
             #confirm_content {
                 height: auto;
