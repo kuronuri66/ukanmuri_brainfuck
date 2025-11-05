@@ -287,7 +287,7 @@ body {
     }
 
     #footer-bg {
-        background-color: #151515;
+        background-color: #121213;
         width: 100%;
         position: fixed;
         bottom: 0;
@@ -307,7 +307,7 @@ body {
                 height: 6dvh;
                 width: 6dvh;
                 margin: 1dvh;
-                background-color: #111;
+                background-color: #050506;
                 border: none;
                 color: whitesmoke;
                 cursor: pointer;
@@ -338,7 +338,7 @@ body {
 
                 #speed_input {
                     margin: auto 1dvh;
-                    background-color: #111;
+                    background-color: #050506;
                     color: white;
                     border: none;
                     height: 4dvh;
@@ -348,7 +348,7 @@ body {
                 }
 
                 select {
-                    background-color: #111;
+                    background-color: #050506;
                     border: none;
                     color: white;
                     height: 5dvh;
