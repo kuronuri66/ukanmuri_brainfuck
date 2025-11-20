@@ -94,9 +94,15 @@ body {
 
     #workspace {
         margin: 0 auto;
-        margin-top: 10dvh;
+        margin-top: 9dvh;
         width: 88vw;
         display: flex;
+
+		.TaskArea{
+			background-color: #1b1b1b;
+			color: whitesmoke;
+			border-radius: 2dvh;
+		}
 
         #leftspace {
             width: 42.5vw;
@@ -111,7 +117,6 @@ body {
                     flex-grow: 1;
                     overflow: scroll;
                     font-size: 2.5dvh;
-                    background-color: #1b1b1b;
                     overflow-x: hidden;  /* 横スクロールバーを非表示 */
                     overflow-y: scroll;
                     padding: 1dvh;
@@ -148,7 +153,7 @@ body {
                     button {
                         border-radius: 50%;
                         border: none;
-                        background-color: #191919;
+                        background-color: #0000;
                         height: 5dvh;
                         font-size: 3vmin;
                         width:5vh;
@@ -178,8 +183,6 @@ body {
                 }
 
                 #code{
-                    background-color: #1b1b1b;
-                    color: whitesmoke;
                     border: none;
                     resize: none;
                     font-size: 3dvh;
@@ -201,7 +204,6 @@ body {
                     white-space: pre-wrap;
                     flex-grow: 1;
                     overflow: scroll;
-                    background-color: #1b1b1b;
                     overflow-x: hidden;  /* 横スクロールバーを非表示 */
                     overflow-y: scroll;
                     padding: 1dvh;
@@ -235,7 +237,6 @@ body {
                     flex-grow: 1;
                     overflow: scroll;
                     font-size: 2.5dvh;
-                    background-color: #1b1b1b;
                     overflow-x: hidden;  /* 横スクロールバーを非表示 */
                     overflow-y: scroll;
                     padding: 1dvh;
@@ -270,8 +271,6 @@ body {
                 flex-direction: column;
 
                 #input {
-                    background-color: #1b1b1b;
-                    color: whitesmoke;
                     border: none;
                     resize: none;
                     font-size: 3dvh;
@@ -287,7 +286,7 @@ body {
     }
 
     #footer-bg {
-        background-color: #121213;
+        background-color: #0e0e0e;
         width: 100%;
         position: fixed;
         bottom: 0;
@@ -299,16 +298,17 @@ body {
             left: 0px;
             z-index: 9999;
             max-width: 88vw;
-            height:8dvh;
+            height:9dvh;
             align-items: end;
             margin: auto;
 
             button{
-                height: 6dvh;
-                width: 6dvh;
+                height: 7dvh;
+                width: 7dvh;
                 margin: 1dvh;
                 background-color: #050506;
                 border: none;
+				border-radius: 2dvh;
                 color: whitesmoke;
                 cursor: pointer;
                 text-align: center;
@@ -318,7 +318,7 @@ body {
                 aspect-ratio: 1 / 1;
 
                 img {
-                    height: 3.5dvh;
+                    height: 4dvh;
                 }
             }
 
@@ -345,6 +345,7 @@ body {
                     font-size: 3dvh;
                     padding: 0.5dvh;
                     width: 50px;
+					border-radius: 2dvh;
                 }
 
                 select {
@@ -354,6 +355,7 @@ body {
                     height: 5dvh;
                     width: 5vw;
                     font-size: 3dvh;
+					border-radius: 2dvh;
                 }
             }
         }
@@ -377,13 +379,13 @@ body {
 
         .popup-content {
             padding: 2dvh;
-            border-radius: 1dvh;
+            border-radius: 2dvh;
 
             background-color: #fff;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
             position: relative;
-            background-color: #1a1b1a;
+            background-color: #141414;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
 
@@ -436,11 +438,11 @@ body {
 
                 tbody {
                     tr:nth-child(odd) {
-                        background-color: #171717; /* 薄いグレー */
+                        background-color: #171717 /* 薄いグレー */
                     }
 
                     tr:nth-child(even) {
-                        background-color: #131313; /* 白 */
+                        background-color: #202020; /* 白 */
                     }
                 }
             }
@@ -459,11 +461,11 @@ body {
                     margin-left :2vw;
 
                     tr {
-                        background-color: #1a1b1a;
+                        background-color: #0000;
                         height: 4dvh;
 
                         input {
-                            background-color: #131313;
+                            background-color: #101010;
                             color: white;
                             border: none;
                             height: 4dvh;
@@ -498,7 +500,8 @@ body {
     }
 
     #keyboard {
-        background-color: #151515;
+		border: white solid 1px;
+        background-color: #171717;
         width: auto;
         height: auto;
         top: 50px; /* 初期位置 */
@@ -512,15 +515,15 @@ body {
         -ms-user-select: none;
         user-select: none;
 
-        border-radius: 1dvh;
+        border-radius: 2dvh;
         
         #keyboard-head {
             .Popup_title{
                 display: flex;
                 cursor: grab;
                 padding: 1dvh;
-                background-color: #131313;
-                border-radius: 1dvh;
+                background-color: #141414;
+                border-radius: 2dvh;
                 align-items: center;
 
                 &:active{
@@ -536,6 +539,7 @@ body {
                     display: flex;
                 }
             }
+
             .keyboard-close-btn {
                 position: absolute;
                 top: 1dvh;
@@ -544,7 +548,7 @@ body {
                 height: 5dvh;
                 font-size: 4dvh;
                 border-radius: 1dvh;
-                background-color: #131313;
+                background-color: #0000;
 
                 border: none;
                 color: white;
@@ -561,7 +565,8 @@ body {
                 font-size: 3vmin;
                 font-family: Reddit Mono;
                 border-radius: 1dvh;
-                background-color: #131313;
+                background-color: #151515;
+				justify-content: center;
 
                 border: none;
                 color: white;
@@ -571,25 +576,25 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
-  background-color: #2c2c2c;
+  	width: 12px;
+  	background-color: #1b1b1b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #555;
-  border-radius: 6px;
-  border: 3px solid #2c2c2c;
+ 	background-color: #555;
+ 	border-radius: 6px;
+ 	border: 3px solid #1b1b1b;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #777;
+  	background-color: #777;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #2c2c2c;
+  	background-color: #1b1b1b;
 }
 
 html {
-  scrollbar-color: #555 #2c2c2c;
-  scrollbar-width: thin;
+  	scrollbar-color: #555 #1b1b1b;
+  	scrollbar-width: thin;
 }

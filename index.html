@@ -10,8 +10,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="mobilestyle.css" media="screen and (max-width: 480px)">
+    <link rel="stylesheet" href="styles/style2.css">
+    <link rel="stylesheet" href="styles/mobilestyle.css" media="screen and (max-width: 480px)">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,15 +21,28 @@
     <meta name="google-site-verification" content="f6LXY31N1Ng72zveoTxydf9yCadhd7FvHLzNJSf_g10" />
 </head>
 
-<body bgcolor="#161617">
+<body bgcolor="#141414">
     <nav id="header-bg">
         <div id="header">
             <img id="icon_img" src="icon/icon.svg" alt="icon" />
             <p class="header">ukanmuri brainf*ck</p>
-            <button id="infoBtn" class="header_button"><img src="img/info.svg">info</button>
-            <button id="GuiedBtn" class="header_button"><img src="img/Guide.svg">Guide</button>
-            <button id="keyboardBtn" class="header_button"><img src="img/keyboard.svg">kb</button>
-            <button id="settingBtn" class="header_button"><img src="img/settings.svg">option</button>
+
+            <button id="infoBtn" class="header_button">
+				<img src="img/info.svg">
+				info
+			</button>
+            <button id="GuiedBtn" class="header_button">
+				<img src="img/Guide.svg">
+				Guide
+			</button>
+            <button id="keyboardBtn" class="header_button">
+				<img src="img/keyboard.svg">
+				kb
+			</button>
+            <button id="settingBtn" class="header_button">
+				<img src="img/settings.svg">
+				option
+			</button>
         </div>
     </nav>
 
@@ -40,7 +53,7 @@
                     <img src="img/memory.svg" class="title_img">
                     <p>memory</p>
                 </div>
-                <pre id="memory"></pre>
+                <pre id="memory" class="TaskArea"></pre>
             </div>
 
             <div id="code_div">
@@ -66,8 +79,8 @@
                         <img src="img/info.svg">
                     </button>
                 </div>
-                <textarea id="code" onchange="code_change()"></textarea>
-                <pre id="preview"></pre>
+                <textarea id="code" class="TaskArea" onchange="code_change()"></textarea>
+                <pre id="preview" class="TaskArea"></pre>
             </div>
         </div>
         <div id="space"></div>
@@ -77,14 +90,14 @@
                     <img src="img/terminal.svg">
                     <p>console</p>
                 </div>
-                <pre id="console"></pre>
+                <pre id="console" class="TaskArea"></pre>
             </div>
             <div id="input_div">
                 <div class="nav">
                     <img src="img/input.svg">
                     <p>input</p>
                 </div>
-                <textarea id="input"></textarea>
+                <textarea id="input" class="TaskArea"></textarea>
             </div>
         </div>
     </div>
@@ -386,9 +399,9 @@
             <button onclick="keyboard_push('{}')">{}</button>
         </div>
         <div class="keyboard-button">
-            <button onclick="keyboard_push(' ')">space</button>
-            <button onclick="keyboard_push('\t')">tab</button>
-            <button onclick="keyboard_push('\n')">enter</button>
+            <button onclick="keyboard_push(' ')">␣</button>
+            <button onclick="keyboard_push('\t')">t→</button>
+            <button onclick="keyboard_push('\n')">↵</button>
             <button onclick="keyboard_push('←')">←</button>
             <button onclick="keyboard_push('→')">→</button>
             <button onclick="keyboard_push('bs')">⌫</button>
