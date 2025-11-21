@@ -253,7 +253,7 @@ function brainfuck(code,input,bit) {
         const pause = document.getElementById('pause');
         pause.style.display = 'none';
         const play = document.getElementById('play');
-        play.style.display = 'block';
+        play.style.display = 'flex';
 
         display();
         document.getElementById("console_" + console_row).textContent = (result);

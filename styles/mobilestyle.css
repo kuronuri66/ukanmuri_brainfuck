@@ -20,7 +20,7 @@ body {
         flex-direction: column;
         height: 80dvh;
         padding-bottom: 8dvh;
-        margin-top: 9dvh;
+        margin-top: 8dvh;
 
         #leftspace {
             width: 90vw;
@@ -42,6 +42,7 @@ body {
                 }
             }
         }
+
         #rightspace{
             width: 90vw;
             height: 40dvh;
@@ -57,16 +58,6 @@ body {
         }
     }
 
-    #footer-bg {
-
-        #footer {
-            height:7dvh;
-
-            button{
-                width: 5dvh;
-            }
-        }
-    }
 
     #myPopup{
         p{

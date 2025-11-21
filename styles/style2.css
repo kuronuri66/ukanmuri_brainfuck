@@ -150,36 +150,36 @@ body {
                         font-size: 3vmin;
                     }
 
-                    button {
-                        border-radius: 50%;
-                        border: none;
-                        background-color: #0000;
-                        height: 5dvh;
-                        font-size: 3vmin;
-                        width:5vh;
-                        height: 5vh;
-                        margin: 1dvh 0.5dvh;
-                        display: flex;
-                        align-items: center;
-                        padding:0.5vh;
+					#code_buttons{
+						margin-left: auto;
+						display: flex;
+						button {
+							border-radius: 50%;
+							border: none;
+							background-color: #0000;
+							height: 5dvh;
+							font-size: 3vmin;
+							width:5vh;
+							height: 5vh;
+							margin: 1dvh 0.5dvh;
+							display: flex;
+							align-items: center;
+							padding:0.5vh;
 
-                        &:hover {
-                            background-color: #333;
-                        }
+							&:hover {
+								background-color: #333;
+							}
 
-                        &:active {
-                            background-color: #444;
-                        }
+							&:active {
+								background-color: #444;
+							}
 
-                        img {
-                            height:4dvh;
-                            margin:auto;
-                        }
-                    }
-
-                    #save_button {
-                        margin: 1dvh 0.5dvh 1dvh auto;
-                    }
+							img {
+								height:4dvh;
+								margin:auto;
+							}
+						}
+					}
                 }
 
                 #code{

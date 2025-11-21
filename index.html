@@ -62,22 +62,24 @@
                         <img src="img/code.svg">
                         <p>code</p>
                     </div>
-                    <button id="save_button"  class="button" onclick="save()">
-                        <img src="img/download.svg">
-                    </button>
-                    <button class="button" id="load_button">
-                        <input id="load-file" type="file" accept=".txt" style="display:none;" onchange="load()"/>
-                        <img src="img/upload.svg">
-                    </button>
-                    <button id="copy_button" class="button">
-                        <img src="img/copy.svg">
-                    </button>
-                    <button id="bomb_button" class="button" onclick="myconfirm();confirm_target = 'bomb'">
-                        <img src="img/bomb.svg">
-                    </button>
-                    <button id="codei_btn" class="button">
-                        <img src="img/info.svg">
-                    </button>
+					<div id="code_buttons">
+						<button id="save_button"  class="button" onclick="save()">
+                        	<img src="img/download.svg">
+						</button>
+						<button class="button" id="load_button">
+							<input id="load-file" type="file" accept=".txt" style="display:none;" onchange="load()"/>
+							<img src="img/upload.svg">
+						</button>
+						<button id="copy_button" class="button">
+							<img src="img/copy.svg">
+						</button>
+						<button id="bomb_button" class="button" onclick="myconfirm();confirm_target = 'bomb'">
+							<img src="img/bomb.svg">
+						</button>
+						<button id="codei_btn" class="button">
+							<img src="img/info.svg">
+						</button>
+					</div>
                 </div>
                 <textarea id="code" class="TaskArea" onchange="code_change()"></textarea>
                 <pre id="preview" class="TaskArea"></pre>
