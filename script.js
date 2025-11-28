@@ -22,7 +22,6 @@ display();
 initialize();
 
 preview.addEventListener('click',function() {
-    console.log("click");
     code.style.display = "block";
     const preview = document.getElementById("preview");
     preview.style.display = "none";
@@ -55,7 +54,6 @@ function plane_bf(code) {
                         break;
                     }
                 }
-                console.log(number);
                 p_code += code[BracesStart - 1].repeat(Number(number) - 1)
             }
         }
@@ -169,7 +167,6 @@ function brainfuck(code,input,bit) {
         }else if (code[i]==",") {
             if (input_i < input.length){
                 memory[pointer] = input.charCodeAt(input_i);
-                console.log(input.charCodeAt(input_i), input_i)
                 input_i++
             }else {
                 memory[pointer] = 0;
@@ -240,7 +237,6 @@ function brainfuck(code,input,bit) {
             }
         } else { 
             display();
-            console.log(document.activeElement == document.getElementById("code"));
             if(document.activeElement != document.getElementById("code")){
                 document.getElementById("code").style.display = "none";
                 const preview = document.getElementById("preview");
@@ -372,7 +368,6 @@ copy_button.addEventListener('click', async () => {
             const copy_button = document.getElementById("copy_button");
             copy_button.style.backgroundColor="";
         }, 500);
-        console.log('Text copied to clipboard!');
     } catch (err) {
         // コピーに失敗した場合
         console.error('Failed to copy text: ', err);
@@ -554,22 +549,9 @@ function OnTabKey( e, obj ){
 	// カーソルの位置を入力したタブの後ろにする
 	obj.selectionEnd = cursorPosition+1;
 }
-
-// localstorage
-document.getElementById( "code" ).onkeydown = function( e ){ OnTabKey( e, this ); }
-if (localStorage.getItem('code')=="" || localStorage.getItem(code)) {
-    localStorage.setItem('code', 
-        "+++++++++++[>++++++>++++++>+++>++++++++<<<<-]>+++>++++++.<.>++++..+++.>-.>-.<<.>>-----.<<---.<-.>>+."
-    );
+document.getElementById( "code" ).onkeydown = function( e ){ 
+    OnTabKey( e, this ); 
 }
-
-document.getElementById("code").addEventListener('input', function(){
-    localStorage.setItem('code', document.getElementById("code").value);
-});
-
-window.addEventListener("load", () =>{
-    document.getElementById("code").value = localStorage.getItem('code');
-});
 
 //speed_input
 const speed_select = document.getElementById("speed_select");
@@ -691,4 +673,19 @@ keyBtn.addEventListener('click', () => {
     document.getElementById('keyboard').style.display='block';
     document.getElementById('keyboard').style.top='50px';
     document.getElementById('keyboard').style.left='50px';
+});
+
+// localstorage
+if (localStorage.getItem('code')=="" || localStorage.getItem(code) == null) {
+    localStorage.setItem('code', 
+        "+++++++++++[>++++++>++++++>+++>++++++++<<<<-]>+++>++++++.<.>++++..+++.>-.>-.<<.>>-----.<<---.<-.>>+."
+    );
+}
+
+document.getElementById("code").addEventListener('input', function(){
+    localStorage.setItem('code', document.getElementById("code").value);
+});
+
+window.addEventListener("load", () =>{
+    document.getElementById("code").value = localStorage.getItem('code');
 });
