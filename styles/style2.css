@@ -192,6 +192,7 @@ body {
                     word-break: break-all;
                     white-space: pre-wrap;
                     padding: 1dvh;
+                    overflow-y: scroll;
                 }
 
                 #preview {
@@ -240,13 +241,14 @@ body {
                     overflow-x: hidden;  /* 横スクロールバーを非表示 */
                     overflow-y: scroll;
                     padding: 1dvh;
-                    font-family: Reddit Mono;
+                    
                     margin:0;
 
                     .result_pre {
                         overflow: hidden;
                         margin: 0.5vmin;
                         min-height: 3.5dvh;
+                        font-family: Reddit Mono;
                     }
                     .console-raw-div {
                         display: flex;
@@ -459,6 +461,7 @@ body {
 
                 table {
                     margin-left :2vw;
+                    font-size: 2dvh;
 
                     tr {
                         background-color: #0000;
@@ -468,6 +471,7 @@ body {
                             background-color: #101010;
                             color: white;
                             border: none;
+                            width: 20vw;
                             height: 4dvh;
                             font-size: 3dvh;
                             font-family: Reddit Mono;
@@ -577,13 +581,13 @@ body {
 
 ::-webkit-scrollbar {
   	width: 12px;
-  	background-color: #1b1b1b;
+  	background-color: #191919;
 }
 
 ::-webkit-scrollbar-thumb {
  	background-color: #555;
  	border-radius: 6px;
- 	border: 3px solid #1b1b1b;
+ 	border: 3px solid #191919;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -591,10 +595,10 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  	background-color: #1b1b1b;
+  	background-color: #191919;
 }
 
 html {
-  	scrollbar-color: #555 #1b1b1b;
+  	scrollbar-color: #555 #191919;
   	scrollbar-width: thin;
 }
